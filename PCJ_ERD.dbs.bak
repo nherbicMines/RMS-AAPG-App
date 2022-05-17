@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="PCJ_ERD" id="Project-261e" database="LogicalDesign" >
+	<comment><![CDATA[Design of the database used for PCJ]]></comment>
+	<schema name="INSTANCE" catalogname="PCJ_ERD" >
+		<table name="Individual_Scores" prior="entity" >
+			<column name="user_id" type="INT" jt="4" mandatory="y" />
+			<column name="presentation_title" type="VARCHAR" length="200" jt="12" mandatory="y" />
+			<column name="organization" type="INT" jt="4" />
+			<column name="attractiveness" type="INT" jt="4" />
+			<column name="legibility" type="INT" jt="4" />
+			<column name="technical_originality" type="INT" jt="4" />
+			<column name="significance_and_longevity" type="INT" jt="4" />
+			<column name="substantiation" type="INT" jt="4" />
+			<column name="overall_impression" type="INT" jt="4" />
+			<column name="paper" type="BOOLEAN" jt="-7" >
+				<comment><![CDATA[Should this presentation be presented as a paper?]]></comment>
+			</column>
+			<column name="lecture_tour" type="BOOLEAN" jt="-7" >
+				<comment><![CDATA[Should this presentation be considered for the "Distinguished Lecture Tour"?]]></comment>
+			</column>
+			<column name="comments" type="VARCHAR" length="250" jt="12" />
+			<index name="idx_individual_scores" unique="PRIMARY_KEY" >
+				<column name="user_id" />
+				<column name="presentation_title" />
+			</index>
+			<fk name="fk_individual_scores" virtual="y" to_schema="PCJ_ERD.INSTANCE" to_table="Users" type="Identifying" >
+				<fk_column name="user_id" pk="user_id" />
+			</fk>
+			<fk name="fk_individual_scores_0" virtual="y" to_schema="PCJ_ERD.INSTANCE" to_table="Scores" type="Identifying" >
+				<fk_column name="presentation_title" pk="presentation_title" />
+			</fk>
+		</table>
+		<table name="Presentations" prior="entity" >
+			<column name="title" type="VARCHAR" length="200" jt="12" mandatory="y" />
+			<column name="presenter_name" type="VARCHAR" length="100" jt="12" />
+			<column name="time" type="DATETIME" jt="93" />
+			<index name="idx_presentations" unique="PRIMARY_KEY" >
+				<column name="title" />
+			</index>
+			<fk name="fk_presentations" virtual="y" to_schema="PCJ_ERD.INSTANCE" to_table="Scores" type="Identifying" >
+				<fk_column name="title" pk="presentation_title" />
+			</fk>
+		</table>
+		<table name="Scores" prior="entity" >
+			<column name="presentation_title" type="VARCHAR" length="200" jt="12" mandatory="y" />
+			<column name="total_score" type="INT" jt="4" mandatory="y" />
+			<column name="num_reviews" type="INT" jt="4" mandatory="y" />
+			<column name="average_score" type="INT" jt="4" />
+			<column name="organization" type="INT" jt="4" mandatory="y" />
+			<column name="attractiveness" type="INT" jt="4" mandatory="y" />
+			<column name="legibility" type="INT" jt="4" mandatory="y" />
+			<column name="technical_originality" type="INT" jt="4" mandatory="y" />
+			<column name="significance_and_longevity" type="INT" jt="4" mandatory="y" />
+			<column name="substantiation" type="INT" jt="4" mandatory="y" />
+			<column name="overall_impression" type="INT" jt="4" mandatory="y" />
+			<index name="idx_scores" unique="PRIMARY_KEY" >
+				<column name="presentation_title" />
+			</index>
+		</table>
+		<table name="Users" prior="users" >
+			<column name="user_id" type="INT" jt="4" mandatory="y" />
+			<column name="user_first_name" type="VARCHAR" length="100" jt="12" mandatory="y" />
+			<column name="user_last_name" type="VARCHAR" length="100" jt="12" mandatory="y" />
+			<column name="user_email" type="VARCHAR" length="100" jt="12" mandatory="y" />
+			<column name="user_company" type="VARCHAR" length="50" jt="12" mandatory="y" />
+			<index name="idx_users" unique="PRIMARY_KEY" >
+				<column name="user_id" />
+			</index>
+		</table>
+	</schema>
+	<layout name="Default Layout" id="Layout-20ee" show_relation="columns" >
+		<entity schema="PCJ_ERD.INSTANCE" name="Individual_Scores" color="C1D8EE" x="128" y="400" />
+		<entity schema="PCJ_ERD.INSTANCE" name="Presentations" color="C1D8EE" x="640" y="128" />
+		<entity schema="PCJ_ERD.INSTANCE" name="Scores" color="C1D8EE" x="272" y="48" />
+		<entity schema="PCJ_ERD.INSTANCE" name="Users" color="C1D8EE" x="48" y="112" />
+		<callout x="496" y="592" pointer="Round" >
+			<comment><![CDATA[Add entities to the layout by drag & drop from the project structure.
+Double-click the entity header to edit.
+Drop this callout from its context menu.]]></comment>
+		</callout>
+	</layout>
+</project>

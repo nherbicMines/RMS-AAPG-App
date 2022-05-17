@@ -1,13 +1,16 @@
-CREATE SCHEMA IF NOT EXISTS "instance";
+DROP TABLE IF EXISTS Presentations;
+DROP TABLE IF EXISTS Users;
+DROP TABLE IF EXISTS scores;
+DROP TABLE IF EXISTS individual_scores;
 
-CREATE  TABLE "instance"."Presentations" ( 
+CREATE  TABLE Presentations ( 
 	title                varchar(200)  NOT NULL  ,
 	presenter_name       varchar(100)    ,
-	"time"               timestamp    ,
+	time               timestamp    ,
 	CONSTRAINT idx_presentations PRIMARY KEY ( title )
  );
 
-CREATE  TABLE "instance"."Users" ( 
+CREATE  TABLE Users ( 
 	user_id              integer  NOT NULL  ,
 	user_first_name      varchar(100)  NOT NULL  ,
 	user_last_name       varchar(100)  NOT NULL  ,
@@ -16,7 +19,7 @@ CREATE  TABLE "instance"."Users" (
 	CONSTRAINT idx_users PRIMARY KEY ( user_id )
  );
 
-CREATE  TABLE "instance".individual_scores ( 
+CREATE  TABLE individual_scores ( 
 	user_id              integer  NOT NULL  ,
 	presentation_title   varchar(200)  NOT NULL  ,
 	organization         integer    ,
@@ -32,7 +35,7 @@ CREATE  TABLE "instance".individual_scores (
 	CONSTRAINT idx_individual_scores PRIMARY KEY ( user_id, presentation_title )
  );
 
-CREATE  TABLE "instance".scores ( 
+CREATE  TABLE scores ( 
 	presentation_title   varchar(200)  NOT NULL  ,
 	total_score          integer  NOT NULL  ,
 	num_reviews          integer  NOT NULL  ,
@@ -47,6 +50,6 @@ CREATE  TABLE "instance".scores (
 	CONSTRAINT idx_scores PRIMARY KEY ( presentation_title )
  );
 
-COMMENT ON COLUMN "instance".individual_scores.paper IS 'Should this presentation be presented as a paper?';
+COMMENT ON COLUMN individual_scores.paper IS 'Should this presentation be presented as a paper?';
 
-COMMENT ON COLUMN "instance".individual_scores.lecture_tour IS 'Should this presentation be considered for the "Distinguished Lecture Tour"?';
+COMMENT ON COLUMN individual_scores.lecture_tour IS 'Should this presentation be considered for the "Distinguished Lecture 
