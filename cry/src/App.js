@@ -1,31 +1,30 @@
 import './App.css';
 import TodoList from './TodoList';
-import React, { useState, useRef } from 'react';
+import Home from './Home';
+
+import React from 'react';
+import {BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+
+//import Home from '../pages/Home';
+//import Signup from '../pages/Signup';
+
+const Main = () => {
+  return (
+    <Routes> {/* The Switch decides which component to show based on the current URL.*/}
+      <Route exact path='/' element={<Home />}></Route>
+    </Routes>
+  );
+}
 
 
 function App() {
-  const[todos, setTodos] = useState([])
-  const todoNameRef = useRef()
-
-  function handleAddTodo(e){
-    const name = todoNameRef.current.value
-    if(name === '')
-    setTodos(prevTodos => {
-      return [...prevTodos, {id: 1, name: name, complete: false}]
-    })
-    todoNameRef.current.value = null
-    
-  }
-
   return (
-    <>
-      <TodoList todos = {todos}/> 
-      <input ref = {todoNameRef} type = "text" />
-      <button onClick = {handleAddTodo}>Add Todo</button>
-      <button>Clear Complete</button>
-      <div> 0 left to do</div>
-    </>
+  <div classname="App">
+    <Main />
+  </div>
   );
 }
+
+
 
 export default App;
