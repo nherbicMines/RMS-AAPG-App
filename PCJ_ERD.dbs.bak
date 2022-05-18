@@ -1,82 +1,138 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<project name="PCJ_ERD" id="Project-261e" database="LogicalDesign" >
+<project name="pcj_erd" id="Project-1882" database="AzurePostgreSQL" >
 	<comment><![CDATA[Design of the database used for PCJ]]></comment>
-	<schema name="INSTANCE" catalogname="PCJ_ERD" >
-		<table name="Individual_Scores" prior="entity" >
-			<column name="user_id" type="INT" jt="4" mandatory="y" />
-			<column name="presentation_title" type="VARCHAR" length="200" jt="12" mandatory="y" />
-			<column name="organization" type="INT" jt="4" />
-			<column name="attractiveness" type="INT" jt="4" />
-			<column name="legibility" type="INT" jt="4" />
-			<column name="technical_originality" type="INT" jt="4" />
-			<column name="significance_and_longevity" type="INT" jt="4" />
-			<column name="substantiation" type="INT" jt="4" />
-			<column name="overall_impression" type="INT" jt="4" />
-			<column name="paper" type="BOOLEAN" jt="-7" >
-				<comment><![CDATA[Should this presentation be presented as a paper?]]></comment>
-			</column>
-			<column name="lecture_tour" type="BOOLEAN" jt="-7" >
-				<comment><![CDATA[Should this presentation be considered for the "Distinguished Lecture Tour"?]]></comment>
-			</column>
-			<column name="comments" type="VARCHAR" length="250" jt="12" />
-			<index name="idx_individual_scores" unique="PRIMARY_KEY" >
-				<column name="user_id" />
-				<column name="presentation_title" />
-			</index>
-			<fk name="fk_individual_scores" virtual="y" to_schema="PCJ_ERD.INSTANCE" to_table="Users" type="Identifying" >
-				<fk_column name="user_id" pk="user_id" />
-			</fk>
-			<fk name="fk_individual_scores_0" virtual="y" to_schema="PCJ_ERD.INSTANCE" to_table="Scores" type="Identifying" >
-				<fk_column name="presentation_title" pk="presentation_title" />
-			</fk>
-		</table>
-		<table name="Presentations" prior="entity" >
-			<column name="title" type="VARCHAR" length="200" jt="12" mandatory="y" />
-			<column name="presenter_name" type="VARCHAR" length="100" jt="12" />
-			<column name="time" type="DATETIME" jt="93" />
+	<schema name="instance" catalogname="PCJ_ERD" >
+		<table name="Presentations" >
+			<column name="title" type="varchar" length="200" jt="12" mandatory="y" />
+			<column name="presenter_name" type="varchar" length="100" jt="12" />
+			<column name="time" type="timestamp" jt="93" />
 			<index name="idx_presentations" unique="PRIMARY_KEY" >
 				<column name="title" />
 			</index>
-			<fk name="fk_presentations" virtual="y" to_schema="PCJ_ERD.INSTANCE" to_table="Scores" type="Identifying" >
+			<fk name="fk_presentations" virtual="y" to_schema="PCJ_ERD.instance" to_table="scores" >
 				<fk_column name="title" pk="presentation_title" />
 			</fk>
 		</table>
-		<table name="Scores" prior="entity" >
-			<column name="presentation_title" type="VARCHAR" length="200" jt="12" mandatory="y" />
-			<column name="total_score" type="INT" jt="4" mandatory="y" />
-			<column name="num_reviews" type="INT" jt="4" mandatory="y" />
-			<column name="average_score" type="INT" jt="4" />
-			<column name="organization" type="INT" jt="4" mandatory="y" />
-			<column name="attractiveness" type="INT" jt="4" mandatory="y" />
-			<column name="legibility" type="INT" jt="4" mandatory="y" />
-			<column name="technical_originality" type="INT" jt="4" mandatory="y" />
-			<column name="significance_and_longevity" type="INT" jt="4" mandatory="y" />
-			<column name="substantiation" type="INT" jt="4" mandatory="y" />
-			<column name="overall_impression" type="INT" jt="4" mandatory="y" />
-			<index name="idx_scores" unique="PRIMARY_KEY" >
-				<column name="presentation_title" />
-			</index>
-		</table>
-		<table name="Users" prior="users" >
-			<column name="user_id" type="INT" jt="4" mandatory="y" />
-			<column name="user_first_name" type="VARCHAR" length="100" jt="12" mandatory="y" />
-			<column name="user_last_name" type="VARCHAR" length="100" jt="12" mandatory="y" />
-			<column name="user_email" type="VARCHAR" length="100" jt="12" mandatory="y" />
-			<column name="user_company" type="VARCHAR" length="50" jt="12" mandatory="y" />
+		<table name="Users" >
+			<column name="user_id" type="integer" jt="4" mandatory="y" />
+			<column name="user_first_name" type="varchar" length="100" jt="12" mandatory="y" />
+			<column name="user_last_name" type="varchar" length="100" jt="12" mandatory="y" />
+			<column name="user_email" type="varchar" length="100" jt="12" mandatory="y" />
+			<column name="user_company" type="varchar" length="50" jt="12" mandatory="y" />
 			<index name="idx_users" unique="PRIMARY_KEY" >
 				<column name="user_id" />
 			</index>
 		</table>
+		<table name="individual_scores" prior="Individual_Scores" >
+			<column name="user_id" type="integer" jt="4" mandatory="y" />
+			<column name="presentation_title" type="varchar" length="200" jt="12" mandatory="y" />
+			<column name="organization" type="integer" jt="4" />
+			<column name="attractiveness" type="integer" jt="4" />
+			<column name="legibility" type="integer" jt="4" />
+			<column name="technical_originality" type="integer" jt="4" />
+			<column name="significance_and_longevity" type="integer" jt="4" />
+			<column name="substantiation" type="integer" jt="4" />
+			<column name="overall_impression" type="integer" jt="4" />
+			<column name="paper" type="boolean" jt="-7" >
+				<comment><![CDATA[Should this presentation be presented as a paper?]]></comment>
+			</column>
+			<column name="lecture_tour" type="boolean" jt="-7" >
+				<comment><![CDATA[Should this presentation be considered for the "Distinguished Lecture Tour"?]]></comment>
+			</column>
+			<column name="comments" type="varchar" length="250" jt="12" />
+			<index name="idx_individual_scores" unique="PRIMARY_KEY" >
+				<column name="user_id" />
+				<column name="presentation_title" />
+			</index>
+			<fk name="fk_individual_scores" virtual="y" to_schema="PCJ_ERD.instance" to_table="Users" >
+				<fk_column name="user_id" pk="user_id" />
+			</fk>
+			<fk name="fk_individual_scores_0" virtual="y" to_schema="PCJ_ERD.instance" to_table="scores" >
+				<fk_column name="presentation_title" pk="presentation_title" />
+			</fk>
+		</table>
+		<table name="scores" prior="Scores" >
+			<column name="presentation_title" type="varchar" length="200" jt="12" mandatory="y" />
+			<column name="total_score" type="integer" jt="4" mandatory="y" />
+			<column name="num_reviews" type="integer" jt="4" mandatory="y" />
+			<column name="average_score" type="integer" jt="4" />
+			<column name="organization" type="integer" jt="4" mandatory="y" />
+			<column name="attractiveness" type="integer" jt="4" mandatory="y" />
+			<column name="legibility" type="integer" jt="4" mandatory="y" />
+			<column name="technical_originality" type="integer" jt="4" mandatory="y" />
+			<column name="significance_and_longevity" type="integer" jt="4" mandatory="y" />
+			<column name="substantiation" type="integer" jt="4" mandatory="y" />
+			<column name="overall_impression" type="integer" jt="4" mandatory="y" />
+			<index name="idx_scores" unique="PRIMARY_KEY" >
+				<column name="presentation_title" />
+			</index>
+		</table>
 	</schema>
-	<layout name="Default Layout" id="Layout-20ee" show_relation="columns" >
-		<entity schema="PCJ_ERD.INSTANCE" name="Individual_Scores" color="C1D8EE" x="128" y="400" />
-		<entity schema="PCJ_ERD.INSTANCE" name="Presentations" color="C1D8EE" x="640" y="128" />
-		<entity schema="PCJ_ERD.INSTANCE" name="Scores" color="C1D8EE" x="272" y="48" />
-		<entity schema="PCJ_ERD.INSTANCE" name="Users" color="C1D8EE" x="48" y="112" />
-		<callout x="496" y="592" pointer="Round" >
+	<connector name="Access" database="Access" driver_class="net.ucanaccess.jdbc.UcanaccessDriver" driver_jar="ucanaccess-5.0.1.jar" driver_desc="Standard" host="localhost" port="0" instance="C:/Users/goofy/Documents/test1.accdb" />
+	<layout name="default layout" id="Layout-82c" confirmed="y" show_relation="columns" >
+		<entity schema="PCJ_ERD.instance" name="Presentations" color="C1D8EE" x="640" y="128" />
+		<entity schema="PCJ_ERD.instance" name="Users" color="C1D8EE" x="48" y="112" />
+		<entity schema="PCJ_ERD.instance" name="individual_scores" color="C1D8EE" x="128" y="400" />
+		<entity schema="PCJ_ERD.instance" name="scores" color="C1D8EE" x="272" y="48" />
+		<callout x="912" y="528" pointer="Round" >
 			<comment><![CDATA[Add entities to the layout by drag & drop from the project structure.
 Double-click the entity header to edit.
 Drop this callout from its context menu.]]></comment>
 		</callout>
+		<script name="SQL_Editor" id="Editor-1c10" language="SQL" >
+			<string><![CDATA[CREATE SCHEMA IF NOT EXISTS "instance";
+
+CREATE  TABLE "instance"."Presentations" ( 
+	title                varchar(200)  NOT NULL  ,
+	presenter_name       varchar(100)    ,
+	"time"               timestamp    ,
+	CONSTRAINT idx_presentations PRIMARY KEY ( title )
+ );
+
+CREATE  TABLE "instance"."Users" ( 
+	user_id              integer  NOT NULL  ,
+	user_first_name      varchar(100)  NOT NULL  ,
+	user_last_name       varchar(100)  NOT NULL  ,
+	user_email           varchar(100)  NOT NULL  ,
+	user_company         varchar(50)  NOT NULL  ,
+	CONSTRAINT idx_users PRIMARY KEY ( user_id )
+ );
+
+CREATE  TABLE "instance".individual_scores ( 
+	user_id              integer  NOT NULL  ,
+	presentation_title   varchar(200)  NOT NULL  ,
+	organization         integer    ,
+	attractiveness       integer    ,
+	legibility           integer    ,
+	technical_originality integer    ,
+	significance_and_longevity integer    ,
+	substantiation       integer    ,
+	overall_impression   integer    ,
+	paper                boolean    ,
+	lecture_tour         boolean    ,
+	comments             varchar(250)    ,
+	CONSTRAINT idx_individual_scores PRIMARY KEY ( user_id, presentation_title )
+ );
+
+CREATE  TABLE "instance".scores ( 
+	presentation_title   varchar(200)  NOT NULL  ,
+	total_score          integer  NOT NULL  ,
+	num_reviews          integer  NOT NULL  ,
+	average_score        integer    ,
+	organization         integer  NOT NULL  ,
+	attractiveness       integer  NOT NULL  ,
+	legibility           integer  NOT NULL  ,
+	technical_originality integer  NOT NULL  ,
+	significance_and_longevity integer  NOT NULL  ,
+	substantiation       integer  NOT NULL  ,
+	overall_impression   integer  NOT NULL  ,
+	CONSTRAINT idx_scores PRIMARY KEY ( presentation_title )
+ );
+
+COMMENT ON COLUMN "instance".individual_scores.paper IS 'Should this presentation be presented as a paper?';
+
+COMMENT ON COLUMN "instance".individual_scores.lecture_tour IS 'Should this presentation be considered for the "Distinguished Lecture Tour"?';
+]]></string>
+		</script>
 	</layout>
 </project>
