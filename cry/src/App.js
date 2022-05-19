@@ -22,7 +22,7 @@ import {BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 function App() {
   return (
     <BrowserRouter>
-      <nav>
+      <nav className="navigation">
         <Link to="/"> Home |</Link>
         <Link to="/UserInfo"> User Info |</Link>
         <Link to="/TimeSelection"> Time Selection |</Link>
