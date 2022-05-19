@@ -13,8 +13,14 @@ body {
   justify-content: space-between;
 }
 
+.timeButton {
+  display: none;
+  justify-content: space-around;
+}
 
-
+.textfields {
+  display: list-item;
+}
 
 
 
