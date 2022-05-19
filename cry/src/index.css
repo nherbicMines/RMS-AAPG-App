@@ -18,11 +18,9 @@ body {
   justify-content: space-around;
 }
 
-.textfields {
-  display: list-item;
+label {
+  justify-content: space-around;
 }
-
-
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',

@@ -17,16 +17,22 @@ function Grade() {
       <form>
         <p>Presentation</p>
         
-        <label>Organization (0-20):</label>
+        
+        <label>Organization (0-20):
         <input type = "number" id = "organization" name = "organization" min = "0" max = "20"/>
-
-        <label>Attractiveness (0-10):</label>
+        </label>
+        <br></br>
+        <label>Attractiveness (0-10):
         <input type = "number" id = "attractiveness" name = "attractiveness" min = "0" max = "10"/>
-
-        <label>Legibility (0-5):</label>
+        </label>
+        <br></br>
+        <label>Legibility (0-5):
         <input type = "number" id = "legibility" name = "legibility" min = "0" max = "5"/>
-
+        </label>
+        <br></br>
+        <div>
         <input type = "button" value = "Next"/>
+        </div>
       </form>
     </div>
   )
