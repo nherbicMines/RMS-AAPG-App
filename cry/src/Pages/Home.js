@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link } from "react-router-dom";
 
 
 
@@ -14,9 +15,12 @@ function Home() {
     <label>
       Judging Form
     </label>
-    <button>
-      Judging Form
-    </button>
+    <br></br>
+
+    <Link to = "/UserInfo">
+    <button>Judging Form</button>
+    </Link>
+
     </div>
     </div>
 
