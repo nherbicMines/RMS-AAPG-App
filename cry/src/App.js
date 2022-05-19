@@ -3,7 +3,9 @@ import Home from './Pages/Home';
 import UserInfo from './Pages/UserInfo';
 import TimeSelection from './Pages/TimeSelection';
 import PresentationType from './Pages/PresentationType';
-import Presentations from './Pages/Presentations';
+import OralPresentations from './Pages/OralPresentations';
+import PosterPresentations from './Pages/PosterPresentations';
+import Schedule from './Pages/Schedule';
 import Grade from './Pages/Grade';
 import Content from './Pages/Content';
 import Impression from './Pages/Impression';
@@ -25,7 +27,9 @@ function App() {
         <Link to="/UserInfo"> User Info |</Link>
         <Link to="/TimeSelection"> Time Selection |</Link>
         <Link to="/PresentationType"> Presentation Type |</Link>
-        <Link to="/Presentations"> Presentations |</Link>
+        <Link to="/OralPresentations"> Oral Presentations |</Link>
+        <Link to="/PosterPresentations"> Poster Presentations |</Link>
+        <Link to="/Schedule"> Schedule |</Link>
         <Link to="/Grade"> Grade |</Link>
         <Link to="/Content"> Content |</Link>
         <Link to="/Impression"> Impression |</Link>
@@ -37,7 +41,9 @@ function App() {
         <Route path='/UserInfo' element={<UserInfo />}></Route>
         <Route path='/TimeSelection' element={<TimeSelection />}></Route>
         <Route path='/PresentationType' element={<PresentationType />}></Route>
-        <Route path='/Presentations' element={<Presentations />}></Route>
+        <Route path='/OralPresentations' element={<OralPresentations />}></Route>
+        <Route path='/PosterPresentations' element={<PosterPresentations />}></Route>
+        <Route path='/Schedule' element={<Schedule />}></Route>
         <Route path='/Grade' element={<Grade />}></Route>
         <Route path='/Content' element={<Content />}></Route>
         <Route path='/Impression' element={<Impression />}></Route>
