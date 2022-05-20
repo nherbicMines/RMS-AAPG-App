@@ -6,10 +6,11 @@ import PresentationType from './Pages/PresentationType';
 import OralPresentations from './Pages/OralPresentations';
 import PosterPresentations from './Pages/PosterPresentations';
 import Schedule from './Pages/Schedule';
-import Grade from './Pages/Grade';
-import Content from './Pages/Content';
-import Impression from './Pages/Impression';
-import Comments from './Pages/Comments';
+import JudgeForm from './Pages/JudgeForm';
+// import Grade from './Pages/Grade';
+// import Content from './Pages/Content';
+// import Impression from './Pages/Impression';
+// import Comments from './Pages/Comments';
 import ErrorPage from './Pages/ErrorPage';
 
 import React from 'react';
@@ -30,10 +31,11 @@ function App() {
         <Link to="/OralPresentations"> Oral Presentations |</Link>
         <Link to="/PosterPresentations"> Poster Presentations |</Link>
         <Link to="/Schedule"> Schedule |</Link>
-        <Link to="/Grade"> Grade |</Link>
+        <Link to="/JudgeForm"> JudgeForm |</Link>
+        {/* <Link to="/Grade"> Grade |</Link>
         <Link to="/Content"> Content |</Link>
         <Link to="/Impression"> Impression |</Link>
-        <Link to="/Comments"> Comments |</Link>
+        <Link to="/Comments"> Comments |</Link> */}
 
       </nav>
       <Routes> {/* The Switch decides which component to show based on the current URL.*/}
@@ -44,10 +46,11 @@ function App() {
         <Route path='/OralPresentations' element={<OralPresentations />}></Route>
         <Route path='/PosterPresentations' element={<PosterPresentations />}></Route>
         <Route path='/Schedule' element={<Schedule />}></Route>
-        <Route path='/Grade' element={<Grade />}></Route>
+        <Route path='/JudgeForm' element={<JudgeForm />}></Route>
+        {/* <Route path='/Grade' element={<Grade />}></Route>
         <Route path='/Content' element={<Content />}></Route>
         <Route path='/Impression' element={<Impression />}></Route>
-        <Route path='/Comments' element={<Comments />}></Route>
+        <Route path='/Comments' element={<Comments />}></Route> */}
         <Route path='*' element={<ErrorPage />}></Route>
       </Routes>
   </BrowserRouter>

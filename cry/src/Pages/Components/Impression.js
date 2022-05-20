@@ -1,9 +1,13 @@
-import React from 'react'
+import React, { Component } from 'react'
 
-function Impression() {
-  return (
-    <div>Impression</div>
-  )
+export class Impression extends Component {
+  render() {
+    return (
+      <div>
+        
+      </div>
+    )
+  }
 }
 
 export default Impression

@@ -1,9 +1,13 @@
-import React from 'react'
+import React, { Component } from 'react'
 
-function Content() {
-  return (
-    <div>Content</div>
-  )
+export class Content extends Component {
+  render() {
+    return (
+      <div>
+        
+      </div>
+    )
+  }
 }
 
 export default Content

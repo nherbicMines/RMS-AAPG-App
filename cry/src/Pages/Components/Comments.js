@@ -1,9 +1,13 @@
-import React from 'react'
+import React, { Component } from 'react'
 
-function Comments() {
-  return (
-    <div>Comments</div>
-  )
+export class Comments extends Component {
+  render() {
+    return (
+      <div>
+        
+      </div>
+    )
+  }
 }
 
 export default Comments
