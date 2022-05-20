@@ -17,15 +17,22 @@ export class Grade extends Component {
 
   return (
     <div>
+      <label>Orgainzation (0-20)</label>
+
+      <br />
+      
       <input
         type = "number"
         min = "0"
         max = "20"
         placeholder = "Enter Score"
-        label = "Orgainzation (0-20)"
         value = {values.organization}
         onChange = {handleChange}
       ></input>
+
+      <br />
+
+      <label>Attractiveness (0-10)</label>
 
       <br />
 
@@ -34,10 +41,13 @@ export class Grade extends Component {
         min = "0"
         max = "10"
         placeholder = "Enter Score"
-        label = "Attractiveness (0-10)"
         value = {values.actractiveness}
         onChange = {handleChange}
       ></input>
+
+      <br />
+
+      <label>Legibility (0-5)</label>
 
       <br />
 
@@ -46,7 +56,6 @@ export class Grade extends Component {
         min = "0"
         max = "5"
         placeholder = "Enter Score"
-        label = "Legibility (0-5)"
         value = {values.legibility}
         onChange = {handleChange}
       ></input>
