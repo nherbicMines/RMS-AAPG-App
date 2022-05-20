@@ -7,56 +7,58 @@ import React, { Component } from 'react'
  */
 
 export class Grade extends Component {
+  continue = e => {
+    e.preventDefault();
+    this.props.nextStep();
+  };
+
   render() {
-    return (
-      <div>
-        <h1>Grade Hoe</h1>
-      </div>
-    )
+    const {values, handleChange} = this.props;
+
+  return (
+    <div>
+      <input
+        type = "number"
+        min = "0"
+        max = "20"
+        placeholder = "Enter Score"
+        label = "Orgainzation (0-20)"
+        value = {values.organization}
+        onChange = {handleChange}
+      ></input>
+
+      <br />
+
+      <input 
+        type = "number"
+        min = "0"
+        max = "10"
+        placeholder = "Enter Score"
+        label = "Attractiveness (0-10)"
+        value = {values.actractiveness}
+        onChange = {handleChange}
+      ></input>
+
+      <br />
+
+      <input 
+        type = "number"
+        min = "0"
+        max = "5"
+        placeholder = "Enter Score"
+        label = "Legibility (0-5)"
+        value = {values.legibility}
+        onChange = {handleChange}
+      ></input>
+
+      <br />
+
+      <button
+        onClick = {this.continue}
+      >Next</button>
+    </div>
+  )
   }
 }
 
 export default Grade
-
-
-// function Grade({formData, setFormData}) {
-
-//   return (
-//     <div className = "grade-container">
-//       <input 
-//       type = "number"
-//       min = "0"
-//       max = "20"
-//       placeholder = "Organization..."
-//       value = {formData.organization}
-//       onChange = {(e) =>
-//         setFormData({...formData, organization: e.target.value})
-//       }
-//       ></input>
-
-//       <input 
-//       type = "number"
-//       min = "0"
-//       max = "10"
-//       placeholder = "Attractiveness..."
-//       value = {formData.actractiveness}
-//       onChange = {(e) =>
-//         setFormData({...formData, actractiveness: e.target.value})
-//       }
-//       ></input>
-
-//       <input 
-//       type = "number"
-//       min = "0"
-//       max = "5"
-//       placeholder = "Legibility..."
-//       value = {formData.legibility}
-//       onChange = {(e) =>
-//         setFormData({...formData, legibility: e.target.value})
-//       }
-//       ></input>
-//     </div>
-//   )
-// }
-
-// export default Grade;

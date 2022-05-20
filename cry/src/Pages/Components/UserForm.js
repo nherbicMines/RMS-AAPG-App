@@ -12,8 +12,9 @@ import Comments from "./Comments"
  */
 
 export class UserForm extends Component {
+    
     state = {
-        page: 1,
+        step: 1,
         organzation: 0,
         attractiveness: 0,
         legibility: 0,
@@ -56,38 +57,39 @@ export class UserForm extends Component {
 
         switch(step) {
             case 1:
+                console.log("page 1")
                 return (
                     <Grade
-                    nextStep={this.nextStep}
-                    handleChange={this.handleChange}
-                    values={values}  
+                        nextStep = {this.nextStep}
+                        handleChange = {this.handleChange}
+                        values = {values}  
                     />     
                 );
             case 2:
                 return (
                     <Content
-                    nextStep={this.nextStep}
-                    prevStep={this.prevStep}
-                    handleChange={this.handleChange}
-                    values={values}  
+                        nextStep = {this.nextStep}
+                        prevStep = {this.prevStep}
+                        handleChange = {this.handleChange}
+                        values = {values}  
                     />     
                 );
             case 3:
                 return (
                     <Impression
-                    nextStep={this.nextStep}
-                    prevStep={this.prevStep}
-                    handleChange={this.handleChange}
-                    values={values}  
+                        nextStep = {this.nextStep}
+                        prevStep = {this.prevStep}
+                        handleChange = {this.handleChange}
+                        values = {values}  
                     />     
                 );
             case 4: 
                 return (
                     <Comments
-                    nextStep={this.nextStep}
-                    prevStep={this.prevStep}
-                    handleChange={this.handleChange}
-                    values={values}  
+                        nextStep = {this.nextStep}
+                        prevStep = {this.prevStep}
+                        handleChange = {this.handleChange}
+                        values = {values}  
                     />     
                 );
             default:
