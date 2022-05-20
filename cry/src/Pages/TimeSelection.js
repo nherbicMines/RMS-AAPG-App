@@ -26,7 +26,7 @@ function TimeSelection() {
       <Link to = "/PresentationType">
         <button>Tuesday PM</button>
       </Link>
-      </div>
+    </div>
   )
 }
 

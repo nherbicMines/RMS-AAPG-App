@@ -17,10 +17,14 @@ export class Grade extends Component {
 
   return (
     <div>
+      <hedaer>Presentation</hedaer>
+
+      <br />
+
       <label>Orgainzation (0-20)</label>
 
       <br />
-      
+
       <input
         type = "number"
         min = "0"
