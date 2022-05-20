@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {Link } from "react-router-dom";
+import {Link } from "react-router-dom"
 import Grade from "./Grade"
 import Content from "./Content"
 import Impression from "./Impression"
