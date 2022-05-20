@@ -13,10 +13,14 @@ body {
   justify-content: space-between;
 }
 
+.timeButton {
+  display: none;
+  justify-content: space-around;
+}
 
-
-
-
+label {
+  justify-content: space-around;
+}
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',

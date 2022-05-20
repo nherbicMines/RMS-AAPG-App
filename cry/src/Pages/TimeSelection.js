@@ -8,7 +8,7 @@ import {Link } from "react-router-dom";
 */
 function TimeSelection() {
   return (
-    <div>
+    <div className="timeButton">
       <p>Time Selection</p>
       
       <Link to = "/PresentationType">
