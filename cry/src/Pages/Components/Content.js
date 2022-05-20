@@ -1,12 +1,70 @@
 import React, { Component } from 'react'
 
 export class Content extends Component {
+  continue = e => {
+    e.preventDefault();
+    this.props.nextStep();
+  };
+
   render() {
-    return (
-      <div>
-        
-      </div>
-    )
+    const {values, handleChange} = this.props;
+
+  return (
+    <div>
+      <hedaer>Content</hedaer>
+
+      <br />
+
+      <label>Technical Originality (0-20)</label>
+
+      <br />
+
+      <input
+        type = "number"
+        min = "0"
+        max = "20"
+        placeholder = "Enter Score"
+        value = {values.originality}
+        onChange = {handleChange}
+      ></input>
+
+      <br />
+
+      <label>Significance & potential Longevity (0-20)</label>
+
+      <br />
+
+      <input 
+        type = "number"
+        min = "0"
+        max = "20"
+        placeholder = "Enter Score"
+        value = {values.longevity}
+        onChange = {handleChange}
+      ></input>
+
+      <br />
+
+      <label>Substantiation (0-20)</label>
+
+      <br />
+
+      <input 
+        type = "number"
+        min = "0"
+        max = "20"
+        placeholder = "Enter Score"
+        value = {values.substantiation}
+        onChange = {handleChange}
+      ></input>
+
+      <br />
+
+      <button
+        onClick = {this.continue}
+      >Next</button>
+    </div>
+  )
   }
 }
 
