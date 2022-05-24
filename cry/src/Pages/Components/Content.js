@@ -30,7 +30,7 @@ export class Content extends Component {
         max = "20"
         placeholder = "Enter Score"
         value = {values.originality}
-        onChange = {handleChange}
+        onChange = {handleChange("originality")}
       ></input>
 
       <br />
@@ -45,7 +45,7 @@ export class Content extends Component {
         max = "20"
         placeholder = "Enter Score"
         value = {values.longevity}
-        onChange = {handleChange}
+        onChange = {handleChange("longevity")}
       ></input>
 
       <br />
@@ -60,7 +60,7 @@ export class Content extends Component {
         max = "20"
         placeholder = "Enter Score"
         value = {values.substantiation}
-        onChange = {handleChange}
+        onChange = {handleChange("substantiation")}
       ></input>
 
       <br />
