@@ -1,5 +1,6 @@
 import {Link } from "react-router-dom";
 import React from 'react'
+import pdf from "../pdf/Academic-Calendar-2022-23.pdf";
 
 function PresentationType() {
   return (
@@ -22,10 +23,11 @@ function PresentationType() {
 
             <br></br>
 
-            <Link to="/Schedule"><button class = "button">
-              Schedule
-            </button>
-            </Link>
+            <div>
+            <a href={pdf} target = "_blank">
+              <button class="button"> Schedule </button>
+            </a>
+            </div>
 
           </div>
   )
