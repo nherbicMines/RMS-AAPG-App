@@ -27,6 +27,7 @@ export class Comments extends Component {
         <br />
 
         <button
+        class="buttonSmall"
         onClick = {this.back}
         >Back</button>
 
@@ -34,6 +35,7 @@ export class Comments extends Component {
 
         <Link to= "/TimeSelection">
           <button
+          class="buttonSmall"
           // onClick = {alert("Your scores have been submited. Returning to Session.")}
           >Submit and Return to Session</button>
         </Link>
@@ -42,6 +44,7 @@ export class Comments extends Component {
 
         <Link to = "/Schedule">
           <button
+          class="buttonSmall"
           // onClick={alert("Returning to Schedule")}
           >Return to Schedule</button>
         </Link>

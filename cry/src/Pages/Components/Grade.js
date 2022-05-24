@@ -67,6 +67,7 @@ export class Grade extends Component {
       <br />
 
       <button
+        class="buttonSmall"
         onClick = {this.continue}
       >Next</button>
     </div>

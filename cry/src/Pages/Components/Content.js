@@ -66,10 +66,12 @@ export class Content extends Component {
       <br />
 
       <button
+        class="buttonSmall"
         onClick = {this.back}
       >Back</button>
 
       <button
+        class="buttonSmall"
         onClick = {this.continue}
       >Next</button>
     </div>
