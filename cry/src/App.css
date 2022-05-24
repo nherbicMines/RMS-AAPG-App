@@ -19,6 +19,16 @@ body {
   margin-bottom: 0.5%;
 }
 
+.buttonSmall {
+  padding: 0.5% 1%;
+  font-size: 1rem;
+  border-radius: 25px;
+  color: white;
+  background-color: #007af3;
+  border: 3px solid #007af3;
+  margin-bottom: 0.5%;
+}
+
 .App {
   text-align: center;
   display: flex;
