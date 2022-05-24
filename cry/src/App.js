@@ -5,13 +5,13 @@ import TimeSelection from './Pages/TimeSelection';
 import PresentationType from './Pages/PresentationType';
 import OralPresentations from './Pages/OralPresentations';
 import PosterPresentations from './Pages/PosterPresentations';
-import Schedule from './Pages/Schedule';
 import JudgeForm from './Pages/JudgeForm';
 // import Grade from './Pages/Grade';
 // import Content from './Pages/Content';
 // import Impression from './Pages/Impression';
 // import Comments from './Pages/Comments';
 import ErrorPage from './Pages/ErrorPage';
+
 
 import React from 'react';
 import {BrowserRouter, Routes, Route, Link } from 'react-router-dom';
@@ -30,7 +30,6 @@ function App() {
         <Link to="/PresentationType"> Presentation Type |</Link>
         <Link to="/OralPresentations"> Oral Presentations |</Link>
         <Link to="/PosterPresentations"> Poster Presentations |</Link>
-        <Link to="/Schedule"> Schedule |</Link>
         <Link to="/JudgeForm"> JudgeForm |</Link>
         {/* <Link to="/Grade"> Grade |</Link>
         <Link to="/Content"> Content |</Link>
@@ -45,7 +44,6 @@ function App() {
         <Route path='/PresentationType' element={<PresentationType />}></Route>
         <Route path='/OralPresentations' element={<OralPresentations />}></Route>
         <Route path='/PosterPresentations' element={<PosterPresentations />}></Route>
-        <Route path='/Schedule' element={<Schedule />}></Route>
         <Route path='/JudgeForm' element={<JudgeForm />}></Route>
         {/* <Route path='/Grade' element={<Grade />}></Route>
         <Route path='/Content' element={<Content />}></Route>
