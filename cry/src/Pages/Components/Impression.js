@@ -34,7 +34,7 @@ export class Impression extends Component {
         max = "5"
         placeholder = "Enter Score"
         value = {values.impression}
-        onChange = {handleChange}
+        onChange = {handleChange("impression")}
         ></input>
 
         <br />
@@ -48,7 +48,7 @@ export class Impression extends Component {
           type = "radio"
           name = "bulletin"
           value = {values.bulletin = Boolean(true)}
-          onChange = {handleChange}
+          onChange = {handleChange("bulletin")}
           checked
           ></input>
           Yes
@@ -61,7 +61,7 @@ export class Impression extends Component {
           type = "radio"
           name = "bulletin"
           value = {values.bulletin = Boolean(false)}
-          onChange = {handleChange}
+          onChange = {handleChange("bulletin")}
           ></input>
           No
         </label>
@@ -77,7 +77,7 @@ export class Impression extends Component {
           type = "radio"
           name = "selectForTour"
           value = {values.selectForTour = Boolean(true)}
-          onChange = {handleChange}
+          onChange = {handleChange("selectForTour")}
           checked
           ></input>
           Yes
@@ -90,7 +90,7 @@ export class Impression extends Component {
           type = "radio"
           name = "selectForTour"
           value = {values.selectForTour = Boolean(false)}
-          onChange = {handleChange}
+          onChange = {handleChange("selectForTour")}
           ></input>
           No
         </label>
