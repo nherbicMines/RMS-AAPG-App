@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+
+// Figure out why impression isn't allowing input and how come the checkboxes are werid.
 /* Impression Page
  * Function: To help the judging score based on the follow criteria. The user will be able to navigate to the previous
  * and next page. Then this information will be saved into the database.
@@ -27,7 +29,7 @@ export class Impression extends Component {
         <br />
 
         <input
-        type = "number"
+        type = "text"
         min = "1"
         max = "5"
         placeholder = "Enter Score"
@@ -36,46 +38,62 @@ export class Impression extends Component {
         ></input>
 
         <br />
-
+        
         <label>Should this presentation be presented as a paper in the AAPG Bulletin?</label>
-
-        <input 
-        type = "radio"
-        name = "yes"
-        value = {values.impression === true}
-        onChange = {handleChange}
-        checked
-        >Yes</input>
 
         <br />
 
-        <input
-        type = "radio"
-        name = "no"
-        value = {values.impression === false}
-        onChange = {handleChange}
-        >No</input>
+        <label>
+          <input 
+          type = "radio"
+          name = "bulletin"
+          value = {values.bulletin = Boolean(true)}
+          onChange = {handleChange}
+          checked
+          ></input>
+          Yes
+        </label>
+
+        <br />
+
+        <label>
+          <input
+          type = "radio"
+          name = "bulletin"
+          value = {values.bulletin = Boolean(false)}
+          onChange = {handleChange}
+          ></input>
+          No
+        </label>
         
         <br />
 
         <label>Should this presentation be considered for "Distinquished Lecture Tour"?</label>
 
-        <input 
-        type = "radio"
-        name = "yes"
-        value = {values.impression === true}
-        onChange = {handleChange}
-        checked
-        >Yes</input>
+        <br />
+
+        <label>
+          <input 
+          type = "radio"
+          name = "selectForTour"
+          value = {values.selectForTour = Boolean(true)}
+          onChange = {handleChange}
+          checked
+          ></input>
+          Yes
+        </label>
 
         <br />
 
-        <input
-        type = "radio"
-        name = "no"
-        value = {values.impression === false}
-        onChange = {handleChange}
-        >No</input>
+        <label>
+          <input
+          type = "radio"
+          name = "selectForTour"
+          value = {values.selectForTour = Boolean(false)}
+          onChange = {handleChange}
+          ></input>
+          No
+        </label>
 
         <br />
 

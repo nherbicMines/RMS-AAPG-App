@@ -6,6 +6,11 @@ export class Content extends Component {
     this.props.nextStep();
   };
 
+  back = e => {
+    e.preventDefault();
+    this.props.prevStep();
+  };
+
   render() {
     const {values, handleChange} = this.props;
 
@@ -59,6 +64,10 @@ export class Content extends Component {
       ></input>
 
       <br />
+
+      <button
+        onClick = {this.back}
+      >Back</button>
 
       <button
         onClick = {this.continue}
