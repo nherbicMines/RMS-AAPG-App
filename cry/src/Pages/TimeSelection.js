@@ -8,20 +8,26 @@ import {Link } from "react-router-dom";
 */
 function TimeSelection() {
   return (
-    <div className="timeButton">
+    <div className = "timeSelection">
       <p>Time Selection</p>
       
       <Link to = "/PresentationType">
         <button>Monday AM</button>
       </Link>
 
+      <br />
+
       <Link to = "/PresentationType">
         <button>Monday PM</button>
       </Link>
 
+      <br />
+
       <Link to = "/PresentationType">
         <button>Tuesday AM</button>
       </Link>
+
+      <br />
 
       <Link to = "/PresentationType">
         <button>Tuesday PM</button>

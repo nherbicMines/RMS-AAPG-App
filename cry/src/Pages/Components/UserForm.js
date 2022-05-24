@@ -21,7 +21,7 @@ export class UserForm extends Component {
         originality: 0,
         longevity: 0,
         substantiation: 0,
-        impression: 0,
+        impression: 1,
         bulletin: false,
         selectForTour: false,
         comment: ""
@@ -57,7 +57,6 @@ export class UserForm extends Component {
 
         switch(step) {
             case 1:
-                console.log("page 1")
                 return (
                     <Grade
                         nextStep = {this.nextStep}
@@ -102,76 +101,3 @@ export class UserForm extends Component {
 }
 
 export default UserForm
-
-// function UserForm() {
-//     const [page, setPage] = useState(0);
-//     const [formData, setFormData] = useState({
-//         page: 0,
-//         organzation: 0,
-//         attractiveness: 0,
-//         legibility: 0,
-//         originality: 0,
-//         longevity: 0,
-//         substantiation: 0,
-//         impression: 0,
-//         bulletin: false,
-//         selectForTour: false,
-//         comment: ""
-//     });
-
-//     const FormTitles = ["Presentation", "Content", "Overall Impression", "Comments for the Presenter"];
-
-//     const PageDisplay = () => {
-//         if (page === 0){
-//             setFormData({...formData.page = page});
-//             return <Grade formData = {formData} setFormData = {setFormData} />
-//         }else if (page === 1){
-//             setFormData({...formData.page = page});
-//             return <Content formData = {formData} setFormData = {setFormData} />
-//         }else if (page === 2){
-//             setFormData({...formData.page = page});
-//             return <Impression formData = {formData} setFormData = {setFormData} />
-//         }else if (page === 3){
-//             setFormData({...formData.page = page});
-//             return <Comments formData = {formData} setFormData = {setFormData} />
-//         }
-//     }
-
-//   return (
-//     <div className = "form-container">
-//         <div className = "header">
-//             <h1>{FormTitles[page]}</h1>
-//         </div>
-//         <div className = "body">{PageDisplay()}</div>
-//         <div className = "footer">
-//             <button 
-//             disabled={page === 0} 
-//             onClick={() => {
-//                 setPage((currPage) => currPage - 1);
-//             }}>Back</button>
-
-//             <button
-//             disable = {page === 3}
-//             onClick={() =>{
-//                 setPage((currPage) => currPage + 1);
-//             }}>Next</button>
-
-//             <Link to = "./Presentations">
-//                 <button
-//                 disabled = {page === 0 || page === 1 || page === 2}
-//                 onClick = {() => {
-//                     alert("Score has been submitted.")
-//                 }}>Sumbit and Return to Session</button>
-//             </Link>
-
-//             <Link to = "./Schedule">
-//                 <button disabled = {page === 0 || page === 1 || page === 2}
-//                 >Return to Schedule</button>
-//             </Link>
-//         </div>
-//     </div>
-//   )
-// }
-
-// export default UserForm
-
