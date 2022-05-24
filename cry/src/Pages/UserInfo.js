@@ -50,7 +50,9 @@ class SimpleForm extends React.Component {
           <input type="text" ref={this.phone} />
         </label>
         <br></br>
-        <input type="submit" name="Submit" />
+        <div className="button">
+          <input type="submit" name="Submit" />
+        </div>
       </form>
     )
   }

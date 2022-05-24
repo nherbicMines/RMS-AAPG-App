@@ -8,21 +8,21 @@ function PresentationType() {
               Click on a button below.
             </p>
 
-            <Link to="/OralPresentations"><button>
+            <Link to="/OralPresentations"><button class="button">
               Oral Presentations
             </button>
             </Link>
 
             <br></br>
 
-            <Link to="/PosterPresentations"><button>
+            <Link to="/PosterPresentations"><button class = "button">
               Poster Presentations
             </button>
             </Link>
 
             <br></br>
 
-            <Link to="/Schedule"><button>
+            <Link to="/Schedule"><button class = "button">
               Schedule
             </button>
             </Link>
