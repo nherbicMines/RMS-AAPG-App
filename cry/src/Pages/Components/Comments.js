@@ -40,15 +40,6 @@ export class Comments extends Component {
           >Submit and Return to Session</button>
         </Link>
 
-        <br />
-
-        <Link to = "/Schedule">
-          <button
-          class="buttonSmall"
-          // onClick={alert("Returning to Schedule")}
-          >Return to Schedule</button>
-        </Link>
-
       </div>
     )
   }
