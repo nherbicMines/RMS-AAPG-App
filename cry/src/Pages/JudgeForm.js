@@ -12,9 +12,6 @@ function JudgeForm() {
       Evaluation Form
       <UserForm />
       {console.log("Didn't make it ;/")}
-      <div id="help-tip">
-        <p>Add description of each criteria here.<br /></p>
-      </div>
     </div>
     
   );

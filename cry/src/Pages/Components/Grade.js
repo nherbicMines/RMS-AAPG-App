@@ -18,7 +18,9 @@ export class Grade extends Component {
   return (
     <div class="criteria">
       <hedaer><u>Presentation</u></hedaer>
-     
+      <div id="help-tip">
+        <p>Add description of each criteria here.<br /></p>
+      </div>
       <div id="organization">
         <br/>
           <label>Orgainzation (0-20)</label>
