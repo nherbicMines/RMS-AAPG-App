@@ -27,23 +27,19 @@ export class Comments extends Component {
         <br />
 
         <button
+        class="buttonSmall"
         onClick = {this.back}
         >Back</button>
 
         <br />
 
         <Link to= "/TimeSelection">
-          <button
-          // onClick = {alert("Your scores have been submited. Returning to Session.")}
-          >Submit and Return to Session</button>
-        </Link>
-
-        <br />
-
-        <Link to = "/Schedule">
-          <button
-          // onClick={alert("Returning to Schedule")}
-          >Return to Schedule</button>
+          <input
+          class="buttonSmall"
+          type = "submit"
+          value = "Submit and Return to Session"
+          //onSubmit = {alert("Your scores have been submited. Returning to Session.")}
+          ></input>
         </Link>
 
       </div>

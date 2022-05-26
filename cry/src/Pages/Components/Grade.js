@@ -31,7 +31,7 @@ export class Grade extends Component {
         max = "20"
         placeholder = "Enter Score"
         value = {values.organization}
-        onChange = {handleChange}
+        onChange = {handleChange("organization")}
       ></input>
 
       <br />
@@ -46,7 +46,7 @@ export class Grade extends Component {
         max = "10"
         placeholder = "Enter Score"
         value = {values.actractiveness}
-        onChange = {handleChange}
+        onChange = {handleChange("actractiveness")}
       ></input>
 
       <br />
@@ -61,12 +61,13 @@ export class Grade extends Component {
         max = "5"
         placeholder = "Enter Score"
         value = {values.legibility}
-        onChange = {handleChange}
+        onChange = {handleChange("legibility")}
       ></input>
 
       <br />
 
       <button
+        class="buttonSmall"
         onClick = {this.continue}
       >Next</button>
     </div>
