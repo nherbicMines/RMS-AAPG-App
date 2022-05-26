@@ -19,7 +19,7 @@ export class Grade extends Component {
     <div class="criteria">
       <hedaer><u>Presentation</u></hedaer>
       <div id="help-tip">
-        <p>Add description of each criteria here.<br /></p>
+        <p>Add description of each criteria here. Orgainzation, Attractiveness, Legibility<br /></p>
       </div>
       <div id="organization">
         <br/>

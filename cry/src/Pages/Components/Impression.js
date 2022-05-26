@@ -20,8 +20,11 @@ export class Impression extends Component {
     const {values, handleChange} = this.props;
     return (
       <div>
+        
+        <div id="help-tip-3">
+        <p>Add description of each criteria here. Impression<br /></p>
+        </div>
         <header>Overall Impression</header>
-
         <br />
 
         <label>1-5 (5 = Excellent)</label>
