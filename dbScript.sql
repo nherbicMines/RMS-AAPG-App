@@ -1,27 +1,14 @@
-DROP TABLE IF EXISTS Presentations;
-DROP TABLE IF EXISTS Users;
-DROP TABLE IF EXISTS scores;
-DROP TABLE IF EXISTS individual_scores;
+CREATE SCHEMA IF NOT EXISTS "instance";
 
-CREATE  TABLE Presentations ( 
-	title                varchar(200)  NOT NULL  ,
-	presenter_name       varchar(100)    ,
-	time               timestamp    ,
-	CONSTRAINT idx_presentations PRIMARY KEY ( title )
+CREATE  TABLE "instance"."admin" ( 
+	username             varchar(100)  NOT NULL  ,
+	pass                 varchar(100)  NOT NULL  ,
+	CONSTRAINT idx_admin PRIMARY KEY ( username )
  );
 
-CREATE  TABLE Users ( 
-	user_id              integer  NOT NULL  ,
-	user_first_name      varchar(100)  NOT NULL  ,
-	user_last_name       varchar(100)  NOT NULL  ,
+CREATE  TABLE "instance".individual_scores ( 
 	user_email           varchar(100)  NOT NULL  ,
-	user_company         varchar(50)  NOT NULL  ,
-	CONSTRAINT idx_users PRIMARY KEY ( user_id )
- );
-
-CREATE  TABLE individual_scores ( 
-	user_id              integer  NOT NULL  ,
-	presentation_title   varchar(200)  NOT NULL  ,
+	presentation_number  varchar(200)  NOT NULL  ,
 	organization         integer    ,
 	attractiveness       integer    ,
 	legibility           integer    ,
@@ -32,10 +19,21 @@ CREATE  TABLE individual_scores (
 	paper                boolean    ,
 	lecture_tour         boolean    ,
 	comments             varchar(250)    ,
-	CONSTRAINT idx_individual_scores PRIMARY KEY ( user_id, presentation_title )
+	CONSTRAINT idx_individual_scores PRIMARY KEY ( user_email, presentation_number )
  );
 
-CREATE  TABLE scores ( 
+CREATE  TABLE "instance".presentations ( 
+	"number"             varchar(6)  NOT NULL  ,
+	title                varchar(200)  NOT NULL  ,
+	presenter_name       varchar(100)  NOT NULL  ,
+	"time"               timestamp  NOT NULL  ,
+	"type"               varchar(100)  NOT NULL  ,
+	"day"                varchar(10)  NOT NULL  ,
+	CONSTRAINT idx_presentations PRIMARY KEY ( "number" )
+ );
+
+CREATE  TABLE "instance".scores ( 
+	presentation_number  varchar(6)  NOT NULL  ,
 	presentation_title   varchar(200)  NOT NULL  ,
 	total_score          integer  NOT NULL  ,
 	num_reviews          integer  NOT NULL  ,
@@ -47,9 +45,19 @@ CREATE  TABLE scores (
 	significance_and_longevity integer  NOT NULL  ,
 	substantiation       integer  NOT NULL  ,
 	overall_impression   integer  NOT NULL  ,
-	CONSTRAINT idx_scores PRIMARY KEY ( presentation_title )
+	CONSTRAINT idx_scores PRIMARY KEY ( presentation_number )
  );
 
-COMMENT ON COLUMN individual_scores.paper IS 'Should this presentation be presented as a paper?';
+CREATE  TABLE "instance".users ( 
+	first_name           varchar(100)  NOT NULL  ,
+	last_name            varchar(100)  NOT NULL  ,
+	email                varchar(100)  NOT NULL  ,
+	company              varchar(50)  NOT NULL  ,
+	CONSTRAINT idx_users PRIMARY KEY ( email )
+ );
 
-COMMENT ON COLUMN individual_scores.lecture_tour IS 'Should this presentation be considered for the "Distinguished Lecture 
+ALTER TABLE "instance".scores ADD CONSTRAINT fk_scores FOREIGN KEY ( presentation_number ) REFERENCES "instance".presentations( "number" );
+
+COMMENT ON COLUMN "instance".individual_scores.paper IS 'Should this presentation be presented as a paper?';
+
+COMMENT ON COLUMN "instance".individual_scores.lecture_tour IS 'Should this presentation be considered for the "Distinguished Lecture Tour"?';
