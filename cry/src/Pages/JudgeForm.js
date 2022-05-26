@@ -11,13 +11,10 @@ function JudgeForm() {
     <div className = "JudgeForm">
       Evaluation Form
       <UserForm />
-<<<<<<< HEAD
       {console.log("Didn't make it ;/")}
       <div id="help-tip">
         <p>Add description of each criteria here.<br /></p>
       </div>
-=======
->>>>>>> 7336caa6aa9558246566fdd58f5e357f05d82519
     </div>
     
   );
