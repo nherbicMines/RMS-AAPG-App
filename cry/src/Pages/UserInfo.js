@@ -17,17 +17,17 @@ class SimpleForm extends React.Component {
     this.firstName = React.createRef();
     this.lastName = React.createRef();
     this.company = React.createRef();
-    this.phone = React.createRef();
+    this.email = React.createRef();
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    if(this.firstName.current.value == '' || this.lastName.current.value == '' || this.phone.current.value == '') {
-      alert("Must enter at least first name, last name, and phone before submitting.");
+    if(this.firstName.current.value === '' || this.lastName.current.value === '' || this.email.current.value === '') {
+      alert("Must enter at least first name, last name, and email before submitting.");
     }
     else {
-      alert(this.firstName.current.value + this.lastName.current.value + " " + this.company.current.value + " " + this.phone.current.value);
+      alert(this.firstName.current.value + this.lastName.current.value + " " + this.company.current.value + " " + this.email.current.value);
     }
   }
 
@@ -46,8 +46,8 @@ class SimpleForm extends React.Component {
           <input type="text" ref={this.company} />
         </label>
         <br></br>
-        <label>Phone Number: 
-          <input type="text" ref={this.phone} />
+        <label>Email: 
+          <input type="text" ref={this.email} />
         </label>
         <br></br>
         <input type="submit" name="Submit" class="buttonSmall"/>
