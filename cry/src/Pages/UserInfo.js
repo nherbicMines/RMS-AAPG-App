@@ -44,8 +44,6 @@ class SimpleForm extends React.Component {
       firstNameValid: firstNameValid, 
       submitDisabled: !submitValid
     })
-    console.log(this.firstNameValid)
-    console.log(this.submitDisabled)
   }
   handleChangeLastName(e) {         // separate handler for each field
     let lastNameValid = e.target.value ? true : false;        // basic firstName validation
