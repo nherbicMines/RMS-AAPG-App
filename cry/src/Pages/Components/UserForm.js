@@ -15,8 +15,8 @@ export class UserForm extends Component {
     
     state = {
         step: 1,
-        organzation: 0,
-        attractiveness: 0,
+        organization: 0,
+        actractiveness: 0,
         legibility: 0,
         originality: 0,
         longevity: 0,
@@ -50,9 +50,9 @@ export class UserForm extends Component {
 
     render() {
         const { step } = this.state;
-        const {organzation, attractiveness, legibility, originality, longevity, substantiation, impression, bulletin, 
+        const {organization, actractiveness, legibility, originality, longevity, substantiation, impression, bulletin, 
             selectForTour} = this.state;
-        const values = {organzation, attractiveness, legibility, originality, longevity, substantiation, impression, 
+        const values = {organization, actractiveness, legibility, originality, longevity, substantiation, impression, 
             bulletin, selectForTour}
 
         switch(step) {

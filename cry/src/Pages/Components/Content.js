@@ -17,7 +17,9 @@ export class Content extends Component {
   return (
     <div>
       <hedaer>Content</hedaer>
-
+      <div id="help-tip-2">
+        <p>Add description of each criteria here. Technical Originality, Significance and potential Longevity, Substantiation <br /></p>
+      </div>
       <br />
 
       <label>Technical Originality (0-20)</label>

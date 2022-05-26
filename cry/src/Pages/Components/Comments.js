@@ -14,6 +14,15 @@ export class Comments extends Component {
     this.props.prevStep();
   };
 
+  // handleSubmit(e) {
+  //   e.preventDefault();
+  //   if(){
+  //     alert("Some scores have been left blank.")
+  //   }else{
+  //     alert("Your scores have been submited. Returning to Session.")
+  //   }
+  // }
+
   render() {
     const {values, handleChange} = this.props;
     return (
@@ -38,7 +47,7 @@ export class Comments extends Component {
           class="buttonSmall"
           type = "submit"
           value = "Submit and Return to Session"
-          //onSubmit = {alert("Your scores have been submited. Returning to Session.")}
+          //onSubmit = {this.handleSubmit}
           ></input>
         </Link>
 

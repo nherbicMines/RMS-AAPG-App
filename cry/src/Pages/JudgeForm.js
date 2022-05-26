@@ -9,9 +9,11 @@ import UserForm from "./Components/UserForm";
 function JudgeForm() {
   return (
     <div className = "JudgeForm">
-      judge form
+      Evaluation Form
       <UserForm />
+      {console.log("Didn't make it ;/")}
     </div>
+    
   );
 }
 

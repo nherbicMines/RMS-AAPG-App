@@ -20,8 +20,11 @@ export class Impression extends Component {
     const {values, handleChange} = this.props;
     return (
       <div>
+        
+        <div id="help-tip-3">
+        <p>Add description of each criteria here. Impression<br /></p>
+        </div>
         <header>Overall Impression</header>
-
         <br />
 
         <label>1-5 (5 = Excellent)</label>
@@ -49,7 +52,6 @@ export class Impression extends Component {
           name = "bulletin"
           value = {values.bulletin = Boolean(true)}
           onChange = {handleChange("bulletin")}
-          checked
           ></input>
           Yes
         </label>
@@ -77,8 +79,7 @@ export class Impression extends Component {
           type = "radio"
           name = "selectForTour"
           value = {values.selectForTour = Boolean(true)}
-          onChange = {handleChange("selectForTour")}
-          checked
+          onChange = {handleChange("selectForTour")}g
           ></input>
           Yes
         </label>
