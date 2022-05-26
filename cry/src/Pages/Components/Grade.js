@@ -14,56 +14,52 @@ export class Grade extends Component {
 
   render() {
     const {values, handleChange} = this.props;
-
+    
   return (
-    <div>
-      <hedaer>Presentation</hedaer>
-
-      <br />
-
-      <label>Orgainzation (0-20)</label>
-
-      <br />
-
-      <input
-        type = "number"
-        min = "0"
-        max = "20"
-        placeholder = "Enter Score"
-        value = {values.organization}
-        onChange = {handleChange("organization")}
-      ></input>
-
-      <br />
-
-      <label>Attractiveness (0-10)</label>
-
-      <br />
-
-      <input 
-        type = "number"
-        min = "0"
-        max = "10"
-        placeholder = "Enter Score"
-        value = {values.actractiveness}
-        onChange = {handleChange("actractiveness")}
-      ></input>
-
-      <br />
-
-      <label>Legibility (0-5)</label>
-
-      <br />
-
-      <input 
-        type = "number"
-        min = "0"
-        max = "5"
-        placeholder = "Enter Score"
-        value = {values.legibility}
-        onChange = {handleChange("legibility")}
-      ></input>
-
+    <div class="criteria">
+      <hedaer><u>Presentation</u></hedaer>
+     
+      <div id="organization">
+        <br/>
+          <label>Orgainzation (0-20)</label>
+        <br/>
+      </div>
+      <div id="organizationstyle">
+        <input
+          type = "number"
+          min = "0"
+          max = "20"
+          placeholder = "Enter Score"
+          value = {values.organization}
+          onChange = {handleChange("organization")}
+        ></input>
+      </div>
+      <div id="attractiveness">
+        <br />
+        <label>Attractiveness (0-10)</label>
+        <br />
+        <input 
+          type = "number"
+          min = "0"
+          max = "10"
+          placeholder = "Enter Score"
+          value = {values.actractiveness}
+          onChange = {handleChange("actractiveness")}
+        ></input>
+      </div>
+      <div>
+        <br/>
+        <label>Legibility (0-5)</label>
+        <br />
+        <input 
+          type = "number"
+          min = "0"
+          max = "5"
+          placeholder = "Enter Score"
+          value = {values.legibility}
+          onChange = {handleChange("legibility")}
+        ></input>
+      </div>
       <br />
 
       <button
