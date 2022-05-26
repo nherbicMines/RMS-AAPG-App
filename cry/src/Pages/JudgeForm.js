@@ -11,7 +11,6 @@ function JudgeForm() {
     <div className = "JudgeForm">
       judge form
       <UserForm />
-      {console.log("Didn't make it ;/")}
     </div>
   );
 }
