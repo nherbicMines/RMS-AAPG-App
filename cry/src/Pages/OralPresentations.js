@@ -1,7 +1,5 @@
 import PresentationForm from './helpers/PresentationForm';
 
-let presentationForm = new PresentationForm
-
 function OralPresentations() {
   return (
     <div>
