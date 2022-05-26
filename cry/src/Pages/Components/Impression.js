@@ -49,7 +49,6 @@ export class Impression extends Component {
           name = "bulletin"
           value = {values.bulletin = Boolean(true)}
           onChange = {handleChange("bulletin")}
-          checked
           ></input>
           Yes
         </label>
@@ -77,8 +76,7 @@ export class Impression extends Component {
           type = "radio"
           name = "selectForTour"
           value = {values.selectForTour = Boolean(true)}
-          onChange = {handleChange("selectForTour")}
-          checked
+          onChange = {handleChange("selectForTour")}g
           ></input>
           Yes
         </label>
