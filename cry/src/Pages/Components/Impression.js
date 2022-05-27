@@ -50,7 +50,7 @@ export class Impression extends Component {
           <input 
           type = "radio"
           name = "bulletin"
-          value = {values.bulletin = true}
+          value = {true}
           onChange = {handleChange("bulletin")}
           ></input>
           Yes
@@ -62,7 +62,7 @@ export class Impression extends Component {
           <input
           type = "radio"
           name = "bulletin"
-          value = {values.bulletin = false}
+          value = {false}
           onChange = {handleChange("bulletin")}
           ></input>
           No
@@ -78,7 +78,7 @@ export class Impression extends Component {
           <input 
           type = "radio"
           name = "selectForTour"
-          value = {values.selectForTour = true}
+          value = {true}
           onChange = {handleChange("selectForTour")}g
           ></input>
           Yes
@@ -90,7 +90,7 @@ export class Impression extends Component {
           <input
           type = "radio"
           name = "selectForTour"
-          value = {values.selectForTour = false}
+          value = {false}
           onChange = {handleChange("selectForTour")}
           ></input>
           No

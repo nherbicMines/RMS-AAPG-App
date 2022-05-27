@@ -22,8 +22,8 @@ export class UserForm extends Component {
         longevity: 0,
         substantiation: 0,
         impression: 1,
-        bulletin: false,
-        selectForTour: false,
+        bulletin: null,
+        selectForTour: null,
         comment: ""
     }
 
