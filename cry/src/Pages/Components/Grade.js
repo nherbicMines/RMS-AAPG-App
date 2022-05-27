@@ -17,7 +17,7 @@ export class Grade extends Component {
     
   return (
     <div class="criteria">
-      <hedaer><u>Presentation</u></hedaer>
+      <header><u>Presentation</u></header>
       <div id="help-tip">
         <p>Add description of each criteria here. Orgainzation, Attractiveness, Legibility<br /></p>
       </div>
@@ -35,6 +35,7 @@ export class Grade extends Component {
           value = {values.organization}
           onChange = {handleChange("organization")}
         ></input>
+        {console.log(values.organization)}
       </div>
       <div id="attractiveness">
         <br />
@@ -48,6 +49,7 @@ export class Grade extends Component {
           value = {values.actractiveness}
           onChange = {handleChange("actractiveness")}
         ></input>
+        {console.log(values.actractiveness)}
       </div>
       <div>
         <br/>
@@ -61,6 +63,7 @@ export class Grade extends Component {
           value = {values.legibility}
           onChange = {handleChange("legibility")}
         ></input>
+        {console.log(values.legibility)}
       </div>
       <br />
 
