@@ -85,7 +85,7 @@ class SimpleForm extends React.Component {
         <label>
           <TextField name="firstName"
           label="First Name"
-          margin="normal" 
+          margin="normal"
           placeholder="First name" 
           variant="standard" 
           defaultValue={this.state.firstName} 
