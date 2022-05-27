@@ -12,19 +12,24 @@ import Comments from "./Comments"
  */
 
 export class UserForm extends Component {
-    
-    state = {
-        step: 1,
-        organization: 0,
-        actractiveness: 0,
-        legibility: 0,
-        originality: 0,
-        longevity: 0,
-        substantiation: 0,
-        impression: 1,
-        bulletin: null,
-        selectForTour: null,
-        comment: ""
+    constructor(props){
+        super(props);
+        this.nextStep = this.nextStep.bind();
+        this.prevStep = this.prevStep.bind();
+        this.handleChange = this.handleChange.bind(this);
+        this.state = {
+            step: 1,
+            organization: 0,
+            actractiveness: 0,
+            legibility: 0,
+            originality: 0,
+            longevity: 0,
+            substantiation: 0,
+            impression: 1,
+            bulletin: null,
+            selectForTour: null,
+            comment: ""
+        }
     }
 
     // Proceed to next step
@@ -41,13 +46,13 @@ export class UserForm extends Component {
         this.setState({
         step: step - 1
         });
-    };
+    }
 
     // Handle fields change
     handleChange = input => e => {
         this.setState({ [input]: e.target.value });
-    };
-
+    }
+    
     render() {
         const { step } = this.state;
         const {organization, actractiveness, legibility, originality, longevity, substantiation, impression, bulletin, 

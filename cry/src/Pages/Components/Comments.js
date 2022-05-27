@@ -1,5 +1,6 @@
+import { TextField } from '@mui/material';
 import React, { Component } from 'react'
-import {Link } from "react-router-dom"
+import { Link } from "react-router-dom"
 
 // Figure out how to return to session pages.
 /* Comments Page
@@ -13,27 +14,23 @@ export class Comments extends Component {
     e.preventDefault();
     this.props.prevStep();
   };
-  
-
-  // handleSubmit(e) {
-  //   e.preventDefault();
-  //   if(){
-  //     alert("Some scores have been left blank.")
-  //   }else{
-  //     alert("Your scores have been submited. Returning to Session.")
-  //   }
-  // }
 
   render() {
     const {values, handleChange} = this.props;
     
     return (
-      //<textarea name = "comment" cols = "50" rows = "5"></textarea>
       <div className = "comments-page">
         <header>Comments / Suggestions for the Presenter</header>
   
         <br />
-        <textarea name = "comment" cols = "50" rows = "5"></textarea>
+        <TextField 
+        id = "comment" 
+        label = "Comment" 
+        multiline 
+        maxRows = {5}
+        value = {values.comment}
+        onChange = {handleChange("comment")}
+        ></TextField>
     
         <br />
 
