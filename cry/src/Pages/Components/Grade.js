@@ -37,8 +37,6 @@ export class Grade extends Component {
         {console.log(values.organization)}
       </div>
       
-      <br />
-      
       <div id="attractiveness">
         <label>Attractiveness (0-10)</label>
         <br />
@@ -52,8 +50,6 @@ export class Grade extends Component {
         ></input>
         {console.log(values.actractiveness)}
       </div>
-      
-      <br/>
       
       <div>
         <label>Legibility (0-5)</label>
