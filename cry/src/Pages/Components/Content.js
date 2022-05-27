@@ -17,6 +17,7 @@ export class Content extends Component {
   return (
     <div className='contentPage'>
       <hedaer>Content</hedaer>
+      <br/>
       <div id="help-tip-2">
         <p>Technical Originality: New concepts or interpretations? Significance and potential Longevity: Are the data interpretations and concepets useful to problems in earth science? How great the impact of this new information. Substantiation: Are data adequate and do they support the conclusion? <br /></p>
       </div>
@@ -59,7 +60,7 @@ export class Content extends Component {
           onChange = {handleChange("substantiation")}
         ></input>
       </div>
-      <br />
+   
       <button
         class="buttonSmall"
         onClick = {this.back}

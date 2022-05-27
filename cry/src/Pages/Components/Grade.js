@@ -21,12 +21,11 @@ export class Grade extends Component {
       <div id="help-tip">
         <p>Add description of each criteria here. Orgainzation, Attractiveness, Legibility<br /></p>
       </div>
+     
       <div id="organization">
         <br/>
           <label>Orgainzation (0-20)</label>
         <br/>
-      </div>
-      <div>
         <input
           type = "number"
           min = "0"
@@ -37,8 +36,10 @@ export class Grade extends Component {
         ></input>
         {console.log(values.organization)}
       </div>
+      
+      <br />
+      
       <div id="attractiveness">
-        <br />
         <label>Attractiveness (0-10)</label>
         <br />
         <input 
@@ -51,8 +52,10 @@ export class Grade extends Component {
         ></input>
         {console.log(values.actractiveness)}
       </div>
+      
+      <br/>
+      
       <div>
-        <br/>
         <label>Legibility (0-5)</label>
         <br />
         <input 
@@ -65,8 +68,7 @@ export class Grade extends Component {
         ></input>
         {console.log(values.legibility)}
       </div>
-      <br />
-
+     
       <button
         class="buttonSmall"
         onClick = {this.continue}

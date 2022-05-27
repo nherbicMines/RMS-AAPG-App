@@ -117,10 +117,13 @@ button[disabled]{
   position: relative;
 }
 
+.criteria{
+	position: relative;
+}
 #help-tip{
 	position:absolute;
-	top: 20%;
-	right:15%;
+	top: 14%;
+	right:22%;
 	transform: translate(-50%, -50%);
 	text-align: center;
 	border: 2px solid #444;
@@ -185,7 +188,6 @@ button[disabled]{
 	transform: translate(-50%, -50%);
 }
 
- 
 #help-tip p:after {
 	width: 10px;
 	height: 40px;
@@ -194,11 +196,14 @@ button[disabled]{
 	top: -40px;
 	left: 0;
 }
+.contentPage{
+	position: relative;
+}
 /*Button in 2nd page*/
 #help-tip-2{
 	position:absolute;
 	top:11%;
-	right:4%;
+	right:22%;
 	transform: translate(-50%, -50%);
 	text-align: center;
 	border: 2px solid #444;
@@ -273,11 +278,12 @@ button[disabled]{
 	top: -40px;
 	left: 0;
 }
+
 /*Button in 3rd page*/
 #help-tip-3{
 	position:absolute;
-	top:20%;
-	right:15%;
+	top:12%;
+	right:22%;
 	transform: translate(-50%, -50%);
 	text-align: center;
 	border: 2px solid #444;
