@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
+import { TextField } from '@mui/material'
 
 function userInfo() {
   return (
@@ -82,7 +83,7 @@ class SimpleForm extends React.Component {
       <form onSubmit={this.handleSubmit}> 
         {/*this.getInitialState()*/}
         <label>First Name: 
-          <TextField name="firstName" defaultValue={this.state.firstName} onChange={this.handleChangeFirstName} />
+          <TextField name="firstName" variant="filled" defaultValue={this.state.firstName} onChange={this.handleChangeFirstName} />
         </label>
         <br></br>
         <label>Last Name: 
