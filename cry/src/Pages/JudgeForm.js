@@ -9,7 +9,9 @@ import UserForm from "./Components/UserForm";
 function JudgeForm() {
   return (
     <div className = "JudgeForm">
+      <div class="bigText">
       Evaluation Form
+      </div>
       <UserForm />
       {console.log("Didn't make it ;/")}
     </div>

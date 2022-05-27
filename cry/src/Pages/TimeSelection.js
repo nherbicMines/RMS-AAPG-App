@@ -9,7 +9,7 @@ import {Link } from "react-router-dom";
 function TimeSelection() {
   return (
     <div className = "timeSelection">
-      <p>Time Selection</p>
+      <p class="bigText">Time Selection</p>
       
       <Link to = "/PresentationType">
         <button class="button">Monday AM</button>

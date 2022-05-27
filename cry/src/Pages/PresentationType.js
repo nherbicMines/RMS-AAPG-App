@@ -5,7 +5,7 @@ import pdf from "../pdf/Academic-Calendar-2022-23.pdf";
 function PresentationType() {
   return (
     <div>
-            <p>
+            <p class="bigText">
               Click on a button below.
             </p>
 
