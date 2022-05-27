@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom';
 
 function userInfo() {
   return (
@@ -94,10 +95,12 @@ class SimpleForm extends React.Component {
           <input type="text" name="email" defaultValue={this.state.email} onChange={this.handleChangeEmail} />
         </label>
         <br></br>
-        <button type="button" 
-        disabled={this.state.submitDisabled}
-        class="buttonSmall"
-        >Submit</button>
+        <Link to="../TimeSelection">
+          <button type="button" 
+          disabled={this.state.submitDisabled}
+          class="buttonSmall"
+          >Submit</button>
+        </Link>
       </form>
     )
   }
