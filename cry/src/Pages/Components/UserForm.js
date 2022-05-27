@@ -28,7 +28,7 @@ export class UserForm extends Component {
             impression: 1,
             bulletin: null,
             selectForTour: null,
-            comment: ""
+            comment: "nothing changed"
         }
     }
 

@@ -28,10 +28,11 @@ export class Comments extends Component {
         label = "Comment" 
         multiline 
         maxRows = {5}
+        style = {{width:200}}
         value = {values.comment}
         onChange = {handleChange("comment")}
         ></TextField>
-    
+        {console.log(values.comment)}
         <br />
 
         <button
