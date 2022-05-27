@@ -4,7 +4,9 @@ import { Link } from 'react-router-dom';
 function userInfo() {
   return (
     <div>
-      userInfo
+      <div class="bigText">
+        Information!
+      </div>
       <SimpleForm />
     </div>
     
