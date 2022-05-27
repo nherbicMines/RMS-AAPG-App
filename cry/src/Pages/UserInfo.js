@@ -82,7 +82,7 @@ class SimpleForm extends React.Component {
       <form onSubmit={this.handleSubmit}> 
         {/*this.getInitialState()*/}
         <label>First Name: 
-          <input name="firstName" defaultValue={this.state.firstName} onChange={this.handleChangeFirstName} />
+          <TextField name="firstName" defaultValue={this.state.firstName} onChange={this.handleChangeFirstName} />
         </label>
         <br></br>
         <label>Last Name: 
