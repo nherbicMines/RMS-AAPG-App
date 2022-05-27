@@ -21,7 +21,9 @@ export class Content extends Component {
       <div id="help-tip-2">
         <p>Technical Originality: New concepts or interpretations? Significance and potential Longevity: Are the data interpretations and concepets useful to problems in earth science? How great the impact of this new information. Substantiation: Are data adequate and do they support the conclusion? <br /></p>
       </div>
+      
       <br />
+      
       <div>
         <label>Technical Originality (0-20)</label>
         <br/>
@@ -34,7 +36,7 @@ export class Content extends Component {
           onChange = {handleChange("originality")}
         ></input>
       </div>
-      <br />
+      
       <div>
         <label>Significance & potential Longevity (0-20)</label>
         <br />
@@ -47,7 +49,7 @@ export class Content extends Component {
           onChange = {handleChange("longevity")}
         ></input>
       </div>
-      <br />
+      
       <div>
         <label>Substantiation (0-20)</label>
         <br />

@@ -24,7 +24,6 @@ export class Impression extends Component {
           <p>Add description of each criteria here. Impression<br /></p>
         </div>
         <header>Overall Impression</header>
-
         <br />
 
         <div>
@@ -40,7 +39,6 @@ export class Impression extends Component {
           ></input>
         </div>
         
-        <br />
         
         <div>
           <label>Should this presentation be presented as a paper in the AAPG Bulletin?</label>
@@ -68,7 +66,6 @@ export class Impression extends Component {
           </label>
         </div>
 
-        <br />
         
         <div>
           <label>Should this presentation be considered for "Distinquished Lecture Tour"?</label>
