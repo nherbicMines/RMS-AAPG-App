@@ -82,20 +82,42 @@ class SimpleForm extends React.Component {
     return (
       <form onSubmit={this.handleSubmit}> 
         {/*this.getInitialState()*/}
-        <label>First Name: 
-          <TextField name="firstName" variant="filled" defaultValue={this.state.firstName} onChange={this.handleChangeFirstName} />
+        <label>
+          <TextField name="firstName"
+          label="First Name"
+          margin="normal" 
+          placeholder="First name" 
+          variant="standard" 
+          defaultValue={this.state.firstName} 
+          onChange={this.handleChangeFirstName} />
         </label>
         <br></br>
-        <label>Last Name: 
-          <input type="text" name="lastName" defaultValue={this.state.lastName} onChange={this.handleChangeLastName} />
+        <label>
+          <TextField name="lastName"
+          label="Last Name"
+          margin="normal" 
+          placeholder="Last name" 
+          variant="standard" 
+          defaultValue={this.state.lastName} 
+          onChange={this.handleChangeLastName} />
         </label>
         <br></br>
-        <label>Company: 
-          <input type="text" name="company" defaultValue={this.state.company} />
+        <label>
+          <TextField name="company"
+          label="Company"
+          margin="normal" 
+          placeholder="Company" 
+          variant="standard" />
         </label>
         <br></br>
-        <label>Email: 
-          <input type="text" name="email" defaultValue={this.state.email} onChange={this.handleChangeEmail} />
+        <label>
+          <TextField name="email"
+          label="Email"
+          margin="normal" 
+          placeholder="Email" 
+          variant="standard" 
+          defaultValue={this.state.email} 
+          onChange={this.handleChangeEmail} />
         </label>
         <br></br>
         {this.state.submitDisabled ? (

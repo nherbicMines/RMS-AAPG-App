@@ -26,7 +26,7 @@ export class Grade extends Component {
           <label>Orgainzation (0-20)</label>
         <br/>
       </div>
-      <div id="organizationstyle">
+      <div>
         <input
           type = "number"
           min = "0"
