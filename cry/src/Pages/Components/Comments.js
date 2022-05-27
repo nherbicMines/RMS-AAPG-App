@@ -13,6 +13,7 @@ export class Comments extends Component {
     e.preventDefault();
     this.props.prevStep();
   };
+  
 
   // handleSubmit(e) {
   //   e.preventDefault();
@@ -25,14 +26,15 @@ export class Comments extends Component {
 
   render() {
     const {values, handleChange} = this.props;
+    
     return (
+      //<textarea name = "comment" cols = "50" rows = "5"></textarea>
       <div className = "comments-page">
         <header>Comments / Suggestions for the Presenter</header>
-
+  
         <br />
-
         <textarea name = "comment" cols = "50" rows = "5"></textarea>
-
+    
         <br />
 
         <button
