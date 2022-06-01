@@ -276,7 +276,6 @@ button[disabled]{
 	left: 50%;
 	transform: translate(-50%, -50%);
 }
-
  
 #help-tip-2 p:after {
 	width: 10px;
