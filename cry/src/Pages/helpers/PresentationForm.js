@@ -4,9 +4,9 @@ import {Link } from "react-router-dom";
 
 /*Here is where we would implement some code to grab the presentations from the DB*/
 
-let pres1 = new Presentation("RMS101","Succa my pp", "You're mom", "12:00 PM","TBD","TBD");
-let pres2 = new Presentation("RMS102","Oh god", "some guy", "12:00 PM","TBD","TBD");
-let pres3 = new Presentation("RMS103","Pizza time", "I.C weiner", "12:00 PM","TBD","TBD");
+let pres1 = new Presentation("RMS008","Test Title 1", "Test Presenter Name 1", "9:50 AM","TBD","TBD");
+let pres2 = new Presentation("RMS046","Test Tile 2", "Test Presenter Name 2", "10:35AM","TBD","TBD");
+let pres3 = new Presentation("RMS079","Test Title 3", "Test Presenter Name 3", "10:35 AM","TBD","TBD");
 let myarray = [pres1, pres2, pres3];
 
 class PresentationForm extends React.Component{
