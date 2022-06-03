@@ -19,16 +19,16 @@ export class UserForm extends Component {
         this.handleChange = this.handleChange.bind(this);
         this.state = {
             step: 1,
-            organization: 0,
-            actractiveness: 0,
-            legibility: 0,
-            originality: 0,
-            longevity: 0,
-            substantiation: 0,
-            impression: 1,
+            organization: null,
+            actractiveness: null,
+            legibility: null,
+            originality: null,
+            longevity: null,
+            substantiation: null,
+            impression: null,
             bulletin: null,
             selectForTour: null,
-            comment: "nothing changed"
+            comment: null
         }
     }
 
@@ -50,7 +50,20 @@ export class UserForm extends Component {
 
     // Handle fields change
     handleChange = input => e => {
-        this.setState({ [input]: e.target.value });
+        const errorCheck = {
+            "organization": [-1, 21],
+            "actractiveness": [-1, 11],
+            "legibility": [-1, 6],
+            "originality": [-1, 21],
+            "longevity": [-1, 21],
+            "substantiation": [-1, 21],
+            "impression": [0,6]
+        }
+        if(e.target.value > errorCheck[input][0] && e.target.value < errorCheck[input][1]){
+            this.setState({ [input]: e.target.value });
+        }else{
+            this.setState({ [input]: null });
+        }
     }
     
     render() {
