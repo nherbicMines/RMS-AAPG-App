@@ -7,9 +7,20 @@ import {Link } from "react-router-dom";
 let pres1 = new Presentation("RMS008","Test Title 1", "Test Presenter Name 1", "9:50 AM","TBD","TBD","sesh");
 let pres2 = new Presentation("RMS046","Test Tile 2", "Test Presenter Name 2", "10:35AM","TBD","TBD", "sessiones");
 let pres3 = new Presentation("RMS079","Test Title 3", "Test Presenter Name 3", "10:35 AM","TBD","TBD", "session");
-let myarray = [pres1, pres2, pres3];
+let myarray = [pres1, pres2, pres3];import PresentationForm from './helpers/PresentationForm';
 
-class PresentationForm extends React.Component{
+function session() {
+  return (
+    <div>
+      <p class="bigText">
+      Presentation Form
+      </p>
+      <sessionCards />
+    </div>
+  )
+}
+
+class sessionCards extends React.Component{
   constructor(props) {
     super(props);
     //create ref to store selection
@@ -31,8 +42,8 @@ class PresentationForm extends React.Component{
   makeButton(data) {
     return (
         <Link to = "/JudgeForm">
-          <button class="button" id={data.num+" "+data.title} onClick={this.handleClick}>
-            {data.title} <br></br> {data.presenterName} <br></br> {data.time}
+          <button class="button" id={data.session} onClick={this.handleClick}>
+            {data.session}
           </button>
         </Link>
     );
@@ -48,4 +59,5 @@ class PresentationForm extends React.Component{
   }
 }
 
-export default PresentationForm
+
+export default session
