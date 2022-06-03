@@ -27,6 +27,7 @@ class SimpleForm extends React.Component {
     this.handleChangeFirstName = this.handleChangeFirstName.bind(this);
     this.handleChangeLastName = this.handleChangeLastName.bind(this);
     this.handleChangeEmail = this.handleChangeEmail.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this)
     this.state = {
       firstName: '',
       lastName: '',
@@ -71,8 +72,11 @@ class SimpleForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    Axios.post("pcjserver.database.wiondows.net", {firstName: this.state.firstName, lastName: this.state.lastName,
-     company: this.state.company, email: this.state.email});
+    Axios.post("http://localhost:3001/UserInfo", {
+      firstName: this.state.firstName, 
+      lastName: this.state.lastName,
+      company: this.state.company, 
+      email: this.state.email})
   }
 
   render() {
