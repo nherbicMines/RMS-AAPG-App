@@ -1,14 +1,15 @@
 import PresentationForm from './helpers/PresentationForm';
 
-function PosterPresentations() {
+function Presentations() {
   return (
     <div>
       <p class="bigText">
-      Presentation Form
+      Presentations
       </p>
       <PresentationForm />
     </div>
   )
 }
 
-export default PosterPresentations
+export default Presentations
+

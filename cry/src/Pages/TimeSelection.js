@@ -11,25 +11,25 @@ function TimeSelection() {
     <div className = "timeSelection">
       <p class="bigText">Time Selection</p>
       
-      <Link to = "/PresentationType">
+      <Link to = "/Session">
         <button class="button">Monday AM</button>
       </Link>
 
       <br />
 
-      <Link to = "/PresentationType">
+      <Link to = "/Session">
         <button class="button">Monday PM</button>
       </Link>
 
       <br />
 
-      <Link to = "/PresentationType">
+      <Link to = "/Session">
         <button class="button">Tuesday AM</button>
       </Link>
 
       <br />
 
-      <Link to = "/PresentationType">
+      <Link to = "/Session">
         <button class="button">Tuesday PM</button>
       </Link>
     </div>

@@ -2,10 +2,9 @@ import './App.css';
 import Home from './Pages/Home';
 import UserInfo from './Pages/UserInfo';
 import TimeSelection from './Pages/TimeSelection';
-import PresentationType from './Pages/PresentationType';
-import OralPresentations from './Pages/OralPresentations';
-import PosterPresentations from './Pages/PosterPresentations';
+import Presentations from './Pages/Presentations';
 import JudgeForm from './Pages/JudgeForm';
+import Session from './Pages/Session';
 // import Grade from './Pages/Grade';
 // import Content from './Pages/Content';
 // import Impression from './Pages/Impression';
@@ -27,9 +26,8 @@ function App() {
         <Link to="/"> Home |</Link>
         <Link to="/UserInfo"> User Info |</Link>
         <Link to="/TimeSelection"> Time Selection |</Link>
-        <Link to="/PresentationType"> Presentation Type |</Link>
-        <Link to="/OralPresentations"> Oral Presentations |</Link>
-        <Link to="/PosterPresentations"> Poster Presentations |</Link>
+        <Link to="/Session"> Session |</Link>
+        <Link to="/Presentations"> Presentations |</Link>
         <Link to="/JudgeForm"> JudgeForm |</Link>
         {/* <Link to="/Grade"> Grade |</Link>
         <Link to="/Content"> Content |</Link>
@@ -41,10 +39,9 @@ function App() {
         <Route path='/' element={<Home />}></Route>
         <Route path='/UserInfo' element={<UserInfo />}></Route>
         <Route path='/TimeSelection' element={<TimeSelection />}></Route>
-        <Route path='/PresentationType' element={<PresentationType />}></Route>
-        <Route path='/OralPresentations' element={<OralPresentations />}></Route>
-        <Route path='/PosterPresentations' element={<PosterPresentations />}></Route>
+        <Route path='/Session' element={<Session />}></Route>
         <Route path='/JudgeForm' element={<JudgeForm />}></Route>
+        <Route path='/Presentations' element={<Presentations />}></Route>
         {/* <Route path='/Grade' element={<Grade />}></Route>
         <Route path='/Content' element={<Content />}></Route>
         <Route path='/Impression' element={<Impression />}></Route>
