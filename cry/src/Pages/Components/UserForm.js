@@ -28,7 +28,8 @@ export class UserForm extends Component {
             impression: null,
             bulletin: null,
             selectForTour: null,
-            comment: null
+            comment: null,
+            errorMessage: ["", "", "", "", "", "", ""]
         }
     }
 
@@ -49,7 +50,7 @@ export class UserForm extends Component {
     }
 
     // Handle fields change
-    handleChange = input => e => {
+    handleChange = input => index => e => {
         const errorCheck = {
             "organization": [-1, 21],
             "actractiveness": [-1, 11],
@@ -59,11 +60,18 @@ export class UserForm extends Component {
             "substantiation": [-1, 21],
             "impression": [0,6]
         }
-        if(e.target.value > errorCheck[input][0] && e.target.value < errorCheck[input][1]){
-            this.setState({ [input]: e.target.value });
+        if(errorCheck.hasOwnProperty(input)){
+            if(e.target.value > errorCheck[input][0] && e.target.value < errorCheck[input][1]){
+                this.setState({ [input]: e.target.value });
+                this.setState({[this.state.errorMessage[index]]: ""});
+            }else{
+                this.setState({ [input]: null });
+                this.setState({[this.state.errorMessage[index]]: "Invalid Score"})
+            }
         }else{
-            this.setState({ [input]: null });
+            this.setState({ [input]: e.target.value });
         }
+        
     }
     
     render() {

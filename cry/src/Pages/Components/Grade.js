@@ -15,15 +15,15 @@ export class Grade extends Component {
       this.props.values.legibility != null){
         this.props.nextStep();
     }else{
-      alert("Invalid Entries")
+      if(this.props.values.organization === null){
+        alert("invalid")
+      }else if(this.props.values.actractiveness === null){
+        alert("invalid")
+      }else{
+        alert("invalid")
+      }
     }
   };
-
-  overScore = min => max => e => {
-    var value = parseInt(e.target.value, 20);
-    if (value > max) value = max;
-    if (value < min) value = min;
-  }
 
   render() {
     const {values, handleChange} = this.props;
@@ -46,11 +46,14 @@ export class Grade extends Component {
           <label>Organization (0-20)</label>
         <br/>
         <TextField
+          id = "organization"
           type = "number"
           inputProps = {{min: minOrganization, max: maxOrganization}}
           placeholder = "Enter Score"
+          error = {values.errorMessage[0]}
+          helperText = {values.errorMessage[0]}
           value = {values.organization}
-          onChange = {handleChange("organization")}
+          onChange = {handleChange("organization", 0)}
         ></TextField>
         {console.log(values.organization)}
       </div>
