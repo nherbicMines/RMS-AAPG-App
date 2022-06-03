@@ -70,12 +70,8 @@ class SimpleForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    if(this.firstName.current.value === '' || this.lastName.current.value === '' || this.email.current.value === '') {
-      alert("Must enter at least first name, last name, and email before submitting.");
-    }
-    else {
-      alert(this.firstName.current.value + this.lastName.current.value + " " + this.company.current.value + " " + this.email.current.value);
-    }
+    Axios.post("pcjserver.database.wiondows.net", {firstName: this.state.firstName, lastName: this.state.lastName,
+     company: this.state.company, email: this.state.email});
   }
 
   render() {
@@ -128,6 +124,7 @@ class SimpleForm extends React.Component {
         ) : (
         <Link to="../TimeSelection">
           <button type="button" 
+          onClick={this.handleSubmit}
           disabled={this.state.submitDisabled}
           class="buttonSmall"
           >Submit</button>
