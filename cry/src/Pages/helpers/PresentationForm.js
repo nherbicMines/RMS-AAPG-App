@@ -19,7 +19,7 @@ class PresentationForm extends React.Component{
   //function that kinda saves info of the button you press
   handleClick(event){
     var id = event.target.id;
-    alert(id);
+    console.log(id);
   }
 
   //when we start interfacing with DB, get rid of title in id 
@@ -32,9 +32,27 @@ class PresentationForm extends React.Component{
     return (
         <Link to = "/JudgeForm">
           <button class="button" id={data.num+" "+data.title} onClick={this.handleClick}>
-            {data.title} <br></br> {data.presenterName} <br></br> {data.time}
+            <b>Title:</b>
+            <br></br>
+            <sub>{data.title}</sub>
+            <br></br> 
+            <b>Presenter(s):</b>
+            <br></br>
+            {data.presenterName}
+            <br></br>
+            <b>Time:</b>
+            <br></br>
+            <sub>{data.time}</sub>
           </button>
         </Link>
+
+
+
+        // <Link to = "/JudgeForm">
+        //   <button class="button" id={data.num+" "+data.title} onClick={this.handleClick}>
+        //     {data.title} <br></br> {data.presenterName} <br></br> {data.time}
+        //   </button>
+        // </Link>
     );
   }
 
