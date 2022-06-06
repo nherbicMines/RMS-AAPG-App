@@ -85,7 +85,7 @@ export class Impression extends Component {
               type = "radio"
               name = "selectForTour"
               value = {true}
-              onChange = {handleChange("selectForTour")}g
+              onChange = {handleChange("selectForTour")}
               ></input>
             Yes
           </label>
