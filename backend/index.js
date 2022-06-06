@@ -30,75 +30,56 @@ connection.on("connect", err => {
   if (err) {
     console.error(err.message);
   } else {
-    queryDatabase();
+    console.log("Connected!");
   }
 });
 
 connection.connect();
 
+
+// User Info Query
 app.post("/UserInfo", (req, res) => {
   const firstName = req.body.firstName
   const lastName = req.body.lastName
   const company = req.body.company
   const email = req.body.email
 
-  const request = new Request(
-    `INSERT INTO users (first_name, last_name, company, email) VALUES (@first,@last,@comp,@email)`,
-    (err, rowCount) => {
-      if (err) {
-        console.error(err.message);
-      } else {
-        console.log(`${rowCount} row(s) returned`);
+  if (email == "deleteAll") {
+    const request = new Request(
+      `DELETE FROM users`,
+      (err, rowCount) => {
+        if (err) {
+          console.error(err.message);
+        } else {
+          console.log(`${rowCount} row(s) returned`);
+        }
       }
-    }
-  );
+    );
+    connection.execSql(request);
+  } else {
+    const request = new Request(
+      `INSERT INTO users (first_name, last_name, company, email) VALUES (@first,@last,@comp,@email)`,
+      (err, rowCount) => {
+        if (err) {
+          console.error(err.message);
+        } else {
+          console.log(`${rowCount} row(s) returned`);
+        }
+      }
+    );
 
-  request.addParameter('first', TYPES.VarChar, firstName);
-  request.addParameter('last', TYPES.VarChar, lastName);
-  request.addParameter('comp', TYPES.VarChar, company);
-  request.addParameter('email', TYPES.VarChar, email);
-
-  connection.execSql(request);
-
-  /*db.query('INSERT INTO users (first_name, last_name, company, email) VALUES (?,?,?,?)', 
-  [firstName, lastName, company, email], (err, result) => {
-    if (err) {
-      console.log(err)
-    } else {
-      console.log("All good my guy")
-      res.send("Values Inserted")
-    }
-  })*/
+    request.addParameter('first', TYPES.VarChar, firstName);
+    request.addParameter('last', TYPES.VarChar, lastName);
+    request.addParameter('comp', TYPES.VarChar, company);
+    request.addParameter('email', TYPES.VarChar, email);
+    connection.execSql(request);
+  }
 })
 
 app.listen(3001, ()=> {
   console.log("Please work")
 })
 
-
-function queryDatabase() {
-  console.log("Reading rows from the Table...");
-
-  // Read all rows from table
-  const request = new Request(
-    `SELECT * FROM users`,
-    (err, rowCount) => {
-      if (err) {
-        console.error(err.message);
-      } else {
-        console.log(`${rowCount} row(s) returned`);
-      }
-    }
-  );
-
-  request.on("row", columns => {
-    columns.forEach(column => {
-      console.log("%s\t%s", column.metadata.colName, column.value);
-    });
-  });
-
-  connection.execSql(request);
-}
 
 
 
