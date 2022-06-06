@@ -1,3 +1,4 @@
+import { TextField, Radio, RadioGroup } from '@mui/material';
 import React, { Component } from 'react'
 
 // Figure out why impression isn't allowing input and how come the checkboxes are werid.
@@ -8,7 +9,11 @@ import React, { Component } from 'react'
 export class Impression extends Component {
   continue = e => {
     e.preventDefault();
-    this.props.nextStep();
+    if(this.props.values.impression != '' && this.props.values.impression != null){
+      this.props.nextStep();
+    }else{
+      alert("Score Required: Impression");
+    }
   };
 
   back = e => {
@@ -16,22 +21,32 @@ export class Impression extends Component {
     this.props.prevStep();
   };
 
+  validate = input => {
+    let invalidEntry = "";
+    invalidEntry = this.props.values[input]!= null ? "" : "Invaild Score";
+    return invalidEntry;
+  };
+
   render() {
     const {values, handleChange} = this.props;
+    const maxImpression = 5;
+    const minImpresssion = 1;
+
     return (
       <div className='impressionsPage'>
         <header>Overall Impression</header>
         <div>
           <label>1-5 (5 = Excellent)</label>
           <br />
-          <input
-            type = "text"
-            min = "1"
-            max = "5"
+          <TextField
+            type = "number"
+            inputProps = {{min: minImpresssion, max:maxImpression}}
             placeholder = "Enter Score"
             value = {values.impression}
             onChange = {handleChange("impression")}
-          ></input>
+            error = {this.validate("impression")}
+            helperText = {this.validate("impression")}
+          ></TextField>
         </div>
         
         
@@ -41,7 +56,7 @@ export class Impression extends Component {
           <label>
             <input 
               type = "radio"
-              name = "bulletin"
+              id = "bulletin"
               value = {true}
               onChange = {handleChange("bulletin")}
             ></input>
@@ -53,7 +68,7 @@ export class Impression extends Component {
           <label>
             <input
               type = "radio"
-              name = "bulletin"
+              id = "bulletin"
               value = {false}
               onChange = {handleChange("bulletin")}
             ></input>
@@ -88,7 +103,7 @@ export class Impression extends Component {
           </label>
         </div>
 
-
+        {console.log(values.impression)}
         {console.log(values.bulletin)}
         {console.log(values.selectForTour)}
 

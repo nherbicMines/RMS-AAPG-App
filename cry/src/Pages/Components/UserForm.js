@@ -5,7 +5,6 @@ import Content from "./Content"
 import Impression from "./Impression"
 import Comments from "./Comments"
 
-//Need to figure out how to return the user to presentation page when they submit scores.
 /* User Form Parent Page
  * Function: To help organize the different pages in the judging form. Sets up what will be displayed on each step.
  * Buttons are implenmented on each page to help link the pages together when needed.
@@ -19,17 +18,16 @@ export class UserForm extends Component {
         this.handleChange = this.handleChange.bind(this);
         this.state = {
             step: 1,
-            organization: null,
-            actractiveness: null,
-            legibility: null,
-            originality: null,
-            longevity: null,
-            substantiation: null,
-            impression: null,
+            organization: '',
+            actractiveness: '',
+            legibility: '',
+            originality: '',
+            longevity: '',
+            substantiation: '',
+            impression: '',
             bulletin: null,
             selectForTour: null,
-            comment: null,
-            errorMessage: ["", "", "", "", "", "", ""]
+            comment: ''
         }
     }
 
@@ -50,7 +48,7 @@ export class UserForm extends Component {
     }
 
     // Handle fields change
-    handleChange = input => index => e => {
+    handleChange = input => e => {
         const errorCheck = {
             "organization": [-1, 21],
             "actractiveness": [-1, 11],
@@ -63,15 +61,14 @@ export class UserForm extends Component {
         if(errorCheck.hasOwnProperty(input)){
             if(e.target.value > errorCheck[input][0] && e.target.value < errorCheck[input][1]){
                 this.setState({ [input]: e.target.value });
-                this.setState({[this.state.errorMessage[index]]: ""});
+            }else if(e.target.value == ""){
+                this.setState({ [input]: e.target.value });
             }else{
                 this.setState({ [input]: null });
-                this.setState({[this.state.errorMessage[index]]: "Invalid Score"})
             }
         }else{
             this.setState({ [input]: e.target.value });
         }
-        
     }
     
     render() {
