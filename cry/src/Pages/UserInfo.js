@@ -26,6 +26,7 @@ class SimpleForm extends React.Component {
   */}
     this.handleChangeFirstName = this.handleChangeFirstName.bind(this);
     this.handleChangeLastName = this.handleChangeLastName.bind(this);
+    this.handleChangeCompany = this.handleChangeCompany.bind(this);
     this.handleChangeEmail = this.handleChangeEmail.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this)
     this.state = {
@@ -60,6 +61,11 @@ class SimpleForm extends React.Component {
       submitDisabled: !submitValid
     })
   }
+  handleChangeCompany(e) {
+    this.setState({
+      company: e.target.value
+    })
+  }
   handleChangeEmail(e) {         // separate handler for each field
     let emailValid = e.target.value ? true : false;        // basic email validation
     let submitValid = this.state.firstNameValid && this.state.lastNameValid && emailValid   // validate total form
@@ -71,7 +77,6 @@ class SimpleForm extends React.Component {
   }
 
   handleSubmit(e) {
-    e.preventDefault();
     Axios.post("http://localhost:3001/UserInfo", {
       firstName: this.state.firstName, 
       lastName: this.state.lastName,
@@ -108,7 +113,9 @@ class SimpleForm extends React.Component {
           label="Company"
           margin="normal" 
           placeholder="Company" 
-          variant="standard" />
+          variant="standard"
+          defaultValue={this.state.company}
+          onChange={this.handleChangeCompany} />
         </label>
         <br></br>
         <label>
@@ -127,7 +134,7 @@ class SimpleForm extends React.Component {
           class="buttonSmall"
           >Submit</button>
         ) : (
-        <Link to="../TimeSelection">
+        <Link to="/TimeSelection">
           <button type="button" 
           onClick={this.handleSubmit}
           disabled={this.state.submitDisabled}
