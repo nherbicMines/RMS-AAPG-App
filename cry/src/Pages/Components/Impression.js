@@ -1,7 +1,6 @@
-import { TextField, Radio, RadioGroup } from '@mui/material';
+import { TextField, Radio, RadioGroup, FormControlLabel } from '@mui/material';
 import React, { Component } from 'react'
 
-// Figure out why impression isn't allowing input and how come the checkboxes are werid.
 /* Impression Page
  * Function: To help the judging score based on the follow criteria. The user will be able to navigate to the previous
  * and next page. Then this information will be saved into the database.
@@ -9,10 +8,21 @@ import React, { Component } from 'react'
 export class Impression extends Component {
   continue = e => {
     e.preventDefault();
-    if(this.props.values.impression != '' && this.props.values.impression != null){
+    if((this.props.values.impression != '' && this.props.values.impression != null) &&
+      this.props.values.bulletin != null && this.props.values.selectForTour != null){
       this.props.nextStep();
     }else{
-      alert("Score Required: Impression");
+      let message  = '';
+      if(this.props.values.impression == '' || this.props.values.impression == null){
+        message += "Score Required: Impression\n"
+      }
+      if(this.props.values.bulletin == null){
+        message += "Input Required: AAPG Bulletin\n"
+      }
+      if(this.props.values.selectForTour == null){
+        message += "Input Required: Distinquished Lecture Tour"
+      }
+      alert(message)
     }
   };
 
@@ -33,8 +43,8 @@ export class Impression extends Component {
     const minImpresssion = 1;
 
     return (
-      <div className='impressionsPage'>
-        <header>Overall Impression</header>
+      <div className='criteria'>
+        <header><u>Overall Impression</u></header>
         <div>
           <label>1-5 (5 = Excellent)</label>
           <br />
@@ -52,55 +62,32 @@ export class Impression extends Component {
         
         <div>
           <label>Should this presentation be presented as a paper in the AAPG Bulletin?</label>
-          <br />
-          <label>
-            <input 
-              type = "radio"
-              id = "bulletin"
-              value = {true}
-              onChange = {handleChange("bulletin")}
-            ></input>
-            Yes
-          </label>
-        </div>
-    
-        <div>
-          <label>
-            <input
-              type = "radio"
-              id = "bulletin"
-              value = {false}
-              onChange = {handleChange("bulletin")}
-            ></input>
-            No
-          </label>
+          <RadioGroup class = "radioButtons" value = {values.bulletin} onChange = {handleChange("bulletin")}>
+            <FormControlLabel 
+            value = {true}
+            control = {<Radio/>} 
+            label = "Yes"/>
+            <br />
+            <FormControlLabel 
+            value = {false}
+            control = {<Radio/>} 
+            label = "No"/>
+          </RadioGroup>
         </div>
 
-        
         <div>
           <label>Should this presentation be considered for "Distinquished Lecture Tour"?</label>
-          <br />
-          <label>
-            <input 
-              type = "radio"
-              name = "selectForTour"
-              value = {true}
-              onChange = {handleChange("selectForTour")}
-              ></input>
-            Yes
-          </label>
-        </div>
-        
-        <div>
-          <label>
-            <input
-            type = "radio"
-            name = "selectForTour"
-              value = {false}
-              onChange = {handleChange("selectForTour")}
-            ></input>
-            No
-          </label>
+          <RadioGroup class = "radioButtons" value = {values.selectForTour} onChange = {handleChange("selectForTour")}>
+            <FormControlLabel 
+            value = {true}
+            control = {<Radio/>} 
+            label = "Yes"/>
+            <br />
+            <FormControlLabel 
+            value = {false}
+            control = {<Radio/>} 
+            label = "No"/>
+          </RadioGroup>
         </div>
 
         {console.log(values.impression)}

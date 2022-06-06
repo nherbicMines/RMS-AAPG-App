@@ -1,6 +1,10 @@
 import { TextField } from '@mui/material';
 import React, { Component } from 'react';
 
+/* Content Page
+ * Function: To help the judging score based on the follow criteria. The user will be able to navigate to the previous
+ * and next page. Then this information will be saved into the database.
+ */
 export class Content extends Component {
   continue = e => {
     e.preventDefault();
@@ -44,8 +48,8 @@ export class Content extends Component {
     const minSubstantiation = 0;
 
   return (
-    <div className='contentPage'>
-      <header>Content</header>
+    <div className='criteria'>
+      <header><u>Content</u></header>
       <br/>
       <div id="help-tip-2">
         <p>Technical Originality: New concepts or interpretations? Significance and potential Longevity: Are the data interpretations and concepets useful to problems in earth science? How great the impact of this new information. Substantiation: Are data adequate and do they support the conclusion? <br /></p>
