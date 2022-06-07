@@ -1,4 +1,5 @@
 const userQuery = require("./userQuery");
+const judgeFormQuery = require("./judgeFormQuery");
 
 const express = require('express')
 const app = express()
@@ -41,6 +42,9 @@ connection.connect();
 
 // User Info Query
 userQuery(app, connection);
+
+//Judge Form Query
+judgeFormQuery(app, connection);
 
 app.listen(3001, ()=> {
   console.log("Please work")

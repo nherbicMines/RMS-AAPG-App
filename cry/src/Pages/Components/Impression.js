@@ -64,12 +64,12 @@ export class Impression extends Component {
           <label>Should this presentation be presented as a paper in the AAPG Bulletin?</label>
           <RadioGroup class = "radioButtons" value = {values.bulletin} onChange = {handleChange("bulletin")}>
             <FormControlLabel 
-            value = {true}
+            value = "Yes"
             control = {<Radio/>} 
             label = "Yes"/>
             <br />
             <FormControlLabel 
-            value = {false}
+            value = "No"
             control = {<Radio/>} 
             label = "No"/>
           </RadioGroup>
@@ -79,12 +79,12 @@ export class Impression extends Component {
           <label>Should this presentation be considered for "Distinquished Lecture Tour"?</label>
           <RadioGroup class = "radioButtons" value = {values.selectForTour} onChange = {handleChange("selectForTour")}>
             <FormControlLabel 
-            value = {true}
+            value = "Yes"
             control = {<Radio/>} 
             label = "Yes"/>
             <br />
             <FormControlLabel 
-            value = {false}
+            value = "No"
             control = {<Radio/>} 
             label = "No"/>
           </RadioGroup>
