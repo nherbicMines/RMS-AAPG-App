@@ -15,6 +15,22 @@ export class Comments extends Component {
     this.props.prevStep();
   };
 
+  handleSubmit = e =>{
+    Axios.post("http://localhost:3001/JudgeForm",{
+      // email: this.props.values,
+      // presentationNum = this.props.values,
+      organization: this.props.values.organization,
+      attractiveness: this.props.values.attractiveness,
+      legibility: this.props.values.legibility,
+      originality: this.props.values.originality,
+      longevity: this.props.values.longevity,
+      substantiation: this.props.values.substantiation,
+      impression: this.props.values.impression,
+      paper: this.props.values.bulletin,
+      lectureTour: this.props.values.selectForTour,
+      comments: this.props.values.comment})
+  }
+
   render() {
     const {values, handleChange} = this.props;
     
@@ -47,7 +63,7 @@ export class Comments extends Component {
           class="buttonSmall"
           type = "submit"
           value = "Submit and Return to Session"
-          //onSubmit = {this.handleSubmit}
+          onClick = {this.handleSubmit}
           ></input>
         </Link>
 
