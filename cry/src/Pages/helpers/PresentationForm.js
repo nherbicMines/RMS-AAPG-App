@@ -30,11 +30,11 @@ class PresentationForm extends React.Component{
   - each button will take the user to the judge form page after clicking */
   makeButton(data) {
     return (
-        <Link to = "/JudgeForm">
+        //<Link to = "/JudgeForm">
           <button class="button" id={data.num+" "+data.title} onClick={this.handleClick}>
             <b>Title:</b>
             <br></br>
-            <sub>{data.title}</sub>
+            {data.title}
             <br></br> 
             <b>Presenter(s):</b>
             <br></br>
@@ -42,9 +42,9 @@ class PresentationForm extends React.Component{
             <br></br>
             <b>Time:</b>
             <br></br>
-            <sub>{data.time}</sub>
+            {data.time}
           </button>
-        </Link>
+        //</Link>
 
 
 
