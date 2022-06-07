@@ -19,7 +19,7 @@ class PresentationForm extends React.Component{
   //function that kinda saves info of the button you press
   handleClick(event){
     var id = event.target.id;
-    alert(id);
+    console.log(id);
   }
 
   //when we start interfacing with DB, get rid of title in id 
@@ -30,11 +30,29 @@ class PresentationForm extends React.Component{
   - each button will take the user to the judge form page after clicking */
   makeButton(data) {
     return (
-        <Link to = "/JudgeForm">
+        //<Link to = "/JudgeForm">
           <button class="button" id={data.num+" "+data.title} onClick={this.handleClick}>
-            {data.title} <br></br> {data.presenterName} <br></br> {data.time}
+            <b>Title:</b>
+            <br></br>
+            {data.title}
+            <br></br> 
+            <b>Presenter(s):</b>
+            <br></br>
+            {data.presenterName}
+            <br></br>
+            <b>Time:</b>
+            <br></br>
+            {data.time}
           </button>
-        </Link>
+        //</Link>
+
+
+
+        // <Link to = "/JudgeForm">
+        //   <button class="button" id={data.num+" "+data.title} onClick={this.handleClick}>
+        //     {data.title} <br></br> {data.presenterName} <br></br> {data.time}
+        //   </button>
+        // </Link>
     );
   }
 
