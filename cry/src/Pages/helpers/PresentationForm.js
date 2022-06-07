@@ -44,7 +44,7 @@ class PresentationForm extends React.Component{
             <br></br>
             {data.time}
           </button>
-        //</Link>
+        </Link>
     );
   }
 
