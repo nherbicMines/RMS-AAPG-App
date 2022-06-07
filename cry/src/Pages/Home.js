@@ -9,7 +9,7 @@ function Home() {
       <img src={process.env.PUBLIC_URL + "/nexthorizon.jpg"}/>
       <div>
         <Link to = "/UserInfo">
-          <button class="button">Judging Form</button>
+          <button class="button">Evaluation Form</button>
         </Link>
       </div>
       <div>
