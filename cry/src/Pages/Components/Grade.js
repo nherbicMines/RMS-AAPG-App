@@ -50,7 +50,7 @@ export class Grade extends Component {
     <div class="criteria">
       <header><u>Presentation</u></header>
       <div id="help-tip">
-        <p>Add description of each criteria here. Orgainzation, Attractiveness, Legibility<br /></p>
+        <p> Organization: Is the presentation organized in a coherent fashion? Attractiveness: Are the colors appealing? Legibility: Is the font easy to read?<br /></p>
       </div>
      
       <div id="organization">
