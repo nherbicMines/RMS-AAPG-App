@@ -134,7 +134,12 @@ class SimpleForm extends React.Component {
           class="buttonSmall"
           >Submit</button>
         ) : (
-        <Link to="/TimeSelection">
+        <Link 
+          to={"/TimeSelection"}
+          state={{
+            email: this.state.email,
+          }}
+        >
           <button type="button" 
           onClick={this.handleSubmit}
           disabled={this.state.submitDisabled}
