@@ -15,6 +15,11 @@ function userInfo() {
   )
 }
 
+function containsSpecialChars(str) {
+  const specialChars = /[@]/;
+  return specialChars.test(str);
+}
+
 class SimpleForm extends React.Component {
   constructor(props) {
     super(props);
@@ -41,8 +46,6 @@ class SimpleForm extends React.Component {
     }
   }
 
-
-
   handleChangeFirstName(e) {         // separate handler for each field
     let firstNameValid = e.target.value ? true : false;        // basic firstName validation
     let submitValid = this.state.emailValid && this.state.lastNameValid && firstNameValid   // validate total form
@@ -68,12 +71,19 @@ class SimpleForm extends React.Component {
   }
   handleChangeEmail(e) {         // separate handler for each field
     let emailValid = e.target.value ? true : false;        // basic email validation
-    let submitValid = this.state.firstNameValid && this.state.lastNameValid && emailValid   // validate total form
+    let containsAt = false;
+    if(containsSpecialChars(e.target.value) == true){
+      containsAt = true;
+    }
+    let submitValid = this.state.firstNameValid && this.state.lastNameValid && emailValid && containsAt   // validate total form
+    
     this.setState({
       email: e.target.value,
       emailValid: emailValid, 
       submitDisabled: !submitValid
     })
+   
+    
   }
 
   handleSubmit(e) {
@@ -82,7 +92,8 @@ class SimpleForm extends React.Component {
       lastName: this.state.lastName,
       company: this.state.company, 
       email: this.state.email})
-  }
+   }
+  
 
   render() {
     return (
@@ -125,7 +136,7 @@ class SimpleForm extends React.Component {
           placeholder="Email" 
           variant="standard" 
           defaultValue={this.state.email} 
-          onChange={this.handleChangeEmail} />
+          onChange={this.handleChangeEmail}/> 
         </label>
         <br></br>
         {this.state.submitDisabled ? (
