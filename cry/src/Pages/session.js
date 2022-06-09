@@ -14,12 +14,10 @@ function Session() {
         Sessions 
         </p>
         <SessionCards />
-        <Link 
-            to = {{
-              pathname: "/TimeSelectioin",
-              //If going backwards on the sessions page, only need the email to go back
-              state: email
-            }}>
+        <Link to={"/TimeSelection"}
+          state={{
+            email: email,
+          }}>
             <button class="buttonSmallLexi">
                 Back  
             </button>
