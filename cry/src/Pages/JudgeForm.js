@@ -1,5 +1,6 @@
-import React from 'react'
+import React from 'react';
 import UserForm from "./Components/UserForm";
+import { useState } from 'react';
 
 /* Form Page
  * Function: Holds the page for a multiple page form. This will be the parent page of the subpages
@@ -7,13 +8,17 @@ import UserForm from "./Components/UserForm";
  * judging form easier.
  */
 function JudgeForm() {
+  const [data, setData] = useState('');
+
+  const passToForm = () => {
+    setData(this.props.location)
+  }
   return (
     <div className = "JudgeForm">
       <div class="bigText">
       Evaluation Form
       </div>
-      <UserForm />
-      {console.log("Didn't make it ;/")}
+      <UserForm passToForm = {data}/>
     </div>
     
   );

@@ -18,8 +18,8 @@ export class Comments extends Component {
 
   handleSubmit = e =>{
     Axios.post("http://localhost:3001/JudgeForm",{
-      // email: this.props.values,
-      // presentationNum = this.props.values,
+      email: this.props.values.email,
+      presentationNum: this.props.values.presentationNum,
       organization: this.props.values.organization,
       attractiveness: this.props.values.attractiveness,
       legibility: this.props.values.legibility,
@@ -44,6 +44,7 @@ export class Comments extends Component {
         id = "comment" 
         label = "Comment" 
         multiline 
+        margin = "normal"
         maxRows = {5}
         style = {{width:200}}
         value = {values.comment}

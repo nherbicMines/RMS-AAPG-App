@@ -18,8 +18,8 @@ export class UserForm extends Component {
         this.handleChange = this.handleChange.bind(this);
         this.state = {
             step: 1,
-            email: '',
-            presentationNum: '',
+            email: this.props.passToForm[0],
+            presentationNum: this.props.passToForm[1],
             organization: '',
             actractiveness: '',
             legibility: '',
@@ -75,13 +75,10 @@ export class UserForm extends Component {
     
     render() {
         const { step } = this.state;
-        const {organization, actractiveness, legibility, originality, longevity, substantiation, impression, bulletin, 
-            selectForTour} = this.state;
-        const values = {organization, actractiveness, legibility, originality, longevity, substantiation, impression, 
-            bulletin, selectForTour};
-        // const { state } = this.props.location;
-        // this.setState({ ["email"]: dataArray[0]});
-        // this.setState({ ["presentationNum"]: dataArray[1]});
+        const {email, presentationNum, organization, actractiveness, legibility, originality, longevity, substantiation, impression, bulletin, 
+            selectForTour, comment} = this.state;
+        const values = {email, presentationNum, organization, actractiveness, legibility, originality, longevity, substantiation, impression, 
+            bulletin, selectForTour, comment};
 
         switch(step) {
             case 1:
