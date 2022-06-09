@@ -3,10 +3,9 @@ import Presentation from './Presentation'
 import {Link } from "react-router-dom";
 
 /*Here is where we would implement some code to grab the presentations from the DB*/
-
-let pres1 = new Presentation("RMS008","Test Title 1", "Test Presenter Name 1", "9:50 AM","TBD","TBD","sesh");
-let pres2 = new Presentation("RMS046","Test Tile 2", "Test Presenter Name 2", "10:35AM","TBD","TBD", "sessiones");
-let pres3 = new Presentation("RMS079","Test Title 3", "Test Presenter Name 3", "10:35 AM","TBD","TBD", "session");
+let pres1 = new Presentation("RMS008","Test Title 1", "Test Presenter Name 1", "9:50 AM", "sesh");
+let pres2 = new Presentation("RMS046","Test Tile 2", "Test Presenter Name 2", "10:35AM", "sessiones");
+let pres3 = new Presentation("RMS079","Test Title 3", "Test Presenter Name 3", "10:35 AM", "session");
 let myarray = [pres1, pres2, pres3];
 
 class PresentationForm extends React.Component{
@@ -29,8 +28,14 @@ class PresentationForm extends React.Component{
   - The id for each button is associated to the presentation's key from DB
   - each button will take the user to the judge form page after clicking */
   makeButton(data) {
+    
     return (
-        <Link to = "/JudgeForm">
+      <div>
+        <Link 
+          to = {{
+            pathname: "/JudgeForm",
+            state: data //store the presentation instance in each button
+          }}>
           <button class="button" id={data.num+" "+data.title} onClick={this.handleClick}>
             <b>Title:</b>
             <br></br>
@@ -45,6 +50,7 @@ class PresentationForm extends React.Component{
             {data.time}
           </button>
         </Link>
+      </div>
     );
   }
 
@@ -57,5 +63,4 @@ class PresentationForm extends React.Component{
     )
   }
 }
-
 export default PresentationForm

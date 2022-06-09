@@ -1,11 +1,8 @@
 import React, { Component } from 'react'
-import Presentation from './Presentation'
-import {Link } from "react-router-dom";
+import {Link, useLocation } from "react-router-dom";
 
-let pres1 = new Presentation("RMS008","Test Title 1", "Test Presenter Name 1", "9:50 AM","TBD","TBD","sesh");
-let pres2 = new Presentation("RMS046","Test Tile 2", "Test Presenter Name 2", "10:35AM","TBD","TBD", "sessiones");
-let pres3 = new Presentation("RMS079","Test Title 3", "Test Presenter Name 3", "10:35 AM","TBD","TBD", "session");
-let myarray = [pres1, pres2, pres3];
+//array with dummy data 
+let myarray = ["session1", "session2", "session3"];
 
 class SessionCards extends React.Component{
     constructor(props) {
@@ -17,7 +14,7 @@ class SessionCards extends React.Component{
   //function that kinda saves info of the button you press
     handleClick(event){
         var id = event.target.id;
-        alert(id);
+        console.log(id);
     }
 
   //when we start interfacing with DB, get rid of title in id 
@@ -28,9 +25,14 @@ class SessionCards extends React.Component{
   - each button will take the user to the judge form page after clicking */
     makeButton(data) {
         return (
-            <Link to = "/Presentations">
-            <button class="button" id={data.session} onClick={this.handleClick}>
-                {data.session}
+            <Link 
+            to = {{
+              pathname: "/Presentations",
+              //send the email and session string to next page
+              state: ["email", data]
+            }}>
+            <button class="button" id={data} onClick={this.handleClick}>
+                {data}
             </button>
             </Link>
         );
@@ -38,6 +40,7 @@ class SessionCards extends React.Component{
 
   /*This returns the array input when we map make button onto each instance */
     render(){
+
         return (
         <div>
             {myarray.map(this.makeButton,this)}
