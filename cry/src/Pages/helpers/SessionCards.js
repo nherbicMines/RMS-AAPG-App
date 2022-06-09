@@ -1,21 +1,22 @@
 import React, { Component } from 'react'
-import {Link, useLocation } from "react-router-dom";
+import {Link, useLocation} from "react-router-dom";
+import Session from '../Session';
 
 //array with dummy data 
 let myarray = ["session1", "session2", "session3"];
 
-class SessionCards extends React.Component{
-    constructor(props) {
+export default class SessionCards extends Component{
+  constructor(props) {
     super(props);
     //create ref to store selection
     this.handleClick = this.handleClick.bind(this);
-    }
+  }
 
-  //function that kinda saves info of the button you press
-    handleClick(event){
-        var id = event.target.id;
-        console.log(id);
-    }
+//function that kinda saves info of the button you press
+  handleClick(event){
+      var id = event.target.id;
+      console.log(id);
+  }
 
   //when we start interfacing with DB, get rid of title in id 
   /*
@@ -24,13 +25,14 @@ class SessionCards extends React.Component{
   - The id for each button is associated to the presentation's key from DB
   - each button will take the user to the judge form page after clicking */
     makeButton(data) {
+        const email = this.props.email;
         return (
-            <Link 
-            to = {{
-              pathname: "/Presentations",
+            <Link to = {"/Presentations"}
               //send the email and session string to next page
-              state: ["email", data]
-            }}>
+              state = {{
+                email: email,
+                session: data 
+            }}> 
             <button class="button" id={data} onClick={this.handleClick}>
                 {data}
             </button>
@@ -40,7 +42,7 @@ class SessionCards extends React.Component{
 
   /*This returns the array input when we map make button onto each instance */
     render(){
-
+        //const{state} = this.props.location;
         return (
         <div>
             {myarray.map(this.makeButton,this)}
@@ -48,4 +50,3 @@ class SessionCards extends React.Component{
         )
     }
 }
-export default SessionCards

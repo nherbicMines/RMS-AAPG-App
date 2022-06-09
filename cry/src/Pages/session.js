@@ -4,6 +4,10 @@ import {Link, useLocation } from "react-router-dom";
 
 //This is the session page, it simply displays the session cards class and has a back button
 function Session() {
+    const location = useLocation();
+    const { email } = location.state;
+    console.log(email);
+
     return (
     <div>
         <p class="bigText">
@@ -14,7 +18,7 @@ function Session() {
             to = {{
               pathname: "/TimeSelectioin",
               //If going backwards on the sessions page, only need the email to go back
-              state: "email"
+              state: email
             }}>
             <button class="buttonSmallLexi">
                 Back  
