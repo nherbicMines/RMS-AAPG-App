@@ -1,5 +1,6 @@
 const userQuery = require("./userQuery");
 const judgeFormQuery = require("./judgeFormQuery");
+const presentPageQuery = require("./presentationPageQuery")
 
 const express = require('express')
 const app = express()
@@ -45,6 +46,9 @@ userQuery(app, connection);
 
 //Judge Form Query
 judgeFormQuery(app, connection);
+
+//Presetation page query
+presentPageQuery(app, connection);
 
 app.listen(3001, ()=> {
   console.log("Please work")
