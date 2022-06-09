@@ -6,14 +6,15 @@ module.exports = function presentationPageQuery(app, connection){
 
         // create a new request
         const request = new Request (
-            `SELECT Title, Name, Time FROM presentations`,    
+          "SELECT Title, Name, Number, Session, Time FROM presentations WHERE Day = @day AND Time LIKE '%@time%' AND Session = @session;",    
 
             // throw err if query failed or display the res to the console
             (err, rowCount) => {
                 if (err) {
                   console.error(err.message);
                 } else {
-                  console.log(`${rowCount} row(s) returned`);
+                console.log(`${rowCount} row(s) returned`);
+                
                 }
               }
             );
