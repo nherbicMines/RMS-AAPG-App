@@ -13,9 +13,19 @@ function Presentations() {
       <p class="bigText">
       Presentations
       </p>
-      <PresentationForm time={time} session={session}/>
       <Link to={`/Session/${time}`}>
+        <div style={{ display: "flex" }}>
         <button class="buttonSmallLexi">
+          Back 
+        </button>
+        </div>
+      </Link>
+      <br></br>
+      <PresentationForm time={time} session={session}/>
+      <br></br>
+      <Link to={`/Session/${time}`}>
+        <button class="buttonSmallLexi"
+          style={{ marginLeft: "auto" }}>
           Back 
         </button>
       </Link>

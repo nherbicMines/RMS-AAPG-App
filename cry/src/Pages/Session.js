@@ -11,12 +11,14 @@ function Session() {
     <div>
         <p class="bigText">
         Sessions 
-        </p>
+        </p>        
+        <Link to={"/TimeSelection"}>
+        <button class="buttonSmallLexi">
+            Back  
+        </button>
+        </Link>
         <SessionCards time={time}/>
-        <Link to={"/TimeSelection"}
-          state={{
-           
-          }}>
+        <Link to={"/TimeSelection"}>
             <button class="buttonSmallLexi">
                 Back  
             </button>

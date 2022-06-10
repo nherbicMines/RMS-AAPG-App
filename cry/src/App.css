@@ -42,7 +42,7 @@ body {
   margin-right: 0.5%;
   transition-duration: 0.2s;
   cursor: pointer;
-  width: 300px;
+  width: 270px;
 }
 .button:hover {
   background-color: white; /* Green */
