@@ -5,8 +5,8 @@ import Axios from 'axios'
 
 function Presentations() {
   const location = useLocation();
-  const { email } = location.state;
-  console.log(email);
+  const { session } = location.state;
+  console.log(session);
   return (
     <div>
       <p class="bigText">
@@ -15,7 +15,7 @@ function Presentations() {
       <PresentationForm />
       <Link to={"/Session"}
           state={{
-            email: email,
+            session: session,
           }}>
         <button class="buttonSmallLexi">
           back 
