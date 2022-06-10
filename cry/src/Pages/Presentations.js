@@ -14,18 +14,14 @@ function Presentations() {
       Presentations
       </p>
       <Link to={`/Session/${time}`}>
-        <div style={{ display: "flex" }}>
         <button class="buttonSmallLexi">
           Back 
         </button>
-        </div>
       </Link>
-      <br></br>
       <PresentationForm time={time} session={session}/>
       <br></br>
       <Link to={`/Session/${time}`}>
-        <button class="buttonSmallLexi"
-          style={{ marginLeft: "auto" }}>
+        <button class="buttonSmallLexi">
           Back 
         </button>
       </Link>
