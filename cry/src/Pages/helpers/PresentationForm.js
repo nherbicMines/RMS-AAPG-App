@@ -28,14 +28,9 @@ export default class PresentationForm extends Component{
   - The id for each button is associated to the presentation's key from DB
   - each button will take the user to the judge form page after clicking */
   makeButton(data) {
-    const email = this.props.email;
     return (
       <div>
-        <Link to = {"/JudgeForm"}
-          state = {{
-            email: email,
-            presentationNum: data.num
-        }}>
+        <Link to = {`/JudgeForm/${this.props.time}/${this.props.session}/${data.num}`}>
           <button class="button" id={data.num+" "+data.title} onClick={this.handleClick}>
             <b>Title:</b>
             <br></br>

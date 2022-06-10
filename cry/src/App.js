@@ -41,7 +41,7 @@ function App() {
         <Route path='/UserInfo' element={<UserInfo />}></Route>
         <Route path='/TimeSelection' element={<TimeSelection />}></Route>
         <Route path='/Session/:time' element={<Session />}></Route>
-        <Route path='/JudgeForm/:email/:presId' element={<JudgeForm />}></Route>
+        <Route path='/JudgeForm/:time/:session/:presId' element={<JudgeForm />}></Route>
         <Route path='/Presentations/:time/:session' element={<Presentations />}></Route>
         {/* <Route path='/Grade' element={<Grade />}></Route>
         <Route path='/Content' element={<Content />}></Route>

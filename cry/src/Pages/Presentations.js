@@ -13,7 +13,7 @@ function Presentations() {
       <p class="bigText">
       Presentations
       </p>
-      <PresentationForm />
+      <PresentationForm time={time} session={session}/>
       <Link to={`/Session/${time}`}>
         <button class="buttonSmallLexi">
           back 

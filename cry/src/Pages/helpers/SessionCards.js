@@ -29,9 +29,9 @@ export default class SessionCards extends Component{
         return (
           <div>
             <Link to = {`/Presentations/${this.props.time}/${data}`}>
-            <button class="button" id={data} onClick={this.handleClick}>
-                {data}
-            </button>
+              <button class="button" id={data} onClick={this.handleClick}>
+                  {data}
+              </button>
             </Link>
           </div>
         );
