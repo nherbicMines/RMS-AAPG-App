@@ -8,7 +8,7 @@ let pres2 = new Presentation("RMS046","Test Tile 2", "Test Presenter Name 2", "1
 let pres3 = new Presentation("RMS079","Test Title 3", "Test Presenter Name 3", "10:35 AM", "session");
 let myarray = [pres1, pres2, pres3];
 
-class PresentationForm extends React.Component{
+export default class PresentationForm extends Component{
   constructor(props) {
     super(props);
     //create ref to store selection
@@ -18,7 +18,7 @@ class PresentationForm extends React.Component{
   //function that kinda saves info of the button you press
   handleClick(event){
     var id = event.target.id;
-    console.log(id);
+
   }
 
   //when we start interfacing with DB, get rid of title in id 
@@ -28,14 +28,14 @@ class PresentationForm extends React.Component{
   - The id for each button is associated to the presentation's key from DB
   - each button will take the user to the judge form page after clicking */
   makeButton(data) {
-    
+    const email = this.props.email;
     return (
       <div>
-        <Link 
-          to = {{
-            pathname: "/JudgeForm",
-            state: data //store the presentation instance in each button
-          }}>
+        <Link to = {"/JudgeForm"}
+          state = {{
+            email: email,
+            presentationNum: data.num
+        }}>
           <button class="button" id={data.num+" "+data.title} onClick={this.handleClick}>
             <b>Title:</b>
             <br></br>
@@ -63,4 +63,3 @@ class PresentationForm extends React.Component{
     )
   }
 }
-export default PresentationForm

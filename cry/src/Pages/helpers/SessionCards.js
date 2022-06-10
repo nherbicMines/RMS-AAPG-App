@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import {Link, useLocation} from "react-router-dom";
-import Session from '../Session';
+
 
 //array with dummy data 
 let myarray = ["session1", "session2", "session3"];
@@ -39,7 +39,6 @@ export default class SessionCards extends Component{
 
   /*This returns the array input when we map make button onto each instance */
     render(){
-        //const{state} = this.props.location;
         return (
         <div>
             {myarray.map(this.makeButton,this)}
