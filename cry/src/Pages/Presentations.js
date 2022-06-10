@@ -16,7 +16,7 @@ function Presentations() {
       <PresentationForm time={time} session={session}/>
       <Link to={`/Session/${time}`}>
         <button class="buttonSmallLexi">
-          back 
+          Back 
         </button>
       </Link>
     </div>

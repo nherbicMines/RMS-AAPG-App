@@ -1,5 +1,6 @@
 import { TextField } from '@mui/material';
 import React, { Component, useState } from 'react'
+import { Link } from 'react-router-dom'
 
 //Needs to figure out how to save the inputs and comminucate to the database. (Form?)
 /* Grade Page
@@ -104,6 +105,12 @@ export class Grade extends Component {
         class="buttonSmall"
         onClick = {this.continue}
       >Next</button>
+      <br></br>
+      <Link to={`/Presentations/${this.props.time}/${this.props.session}`}>
+        <button class="buttonSmall">
+          Return to Presentation List
+        </button>
+      </Link>
     </div>
   )
   }

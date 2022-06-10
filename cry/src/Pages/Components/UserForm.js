@@ -87,6 +87,9 @@ export class UserForm extends Component {
                         nextStep = {this.nextStep}
                         handleChange = {this.handleChange}
                         values = {values}  
+                        time = {this.props.time}
+                        session = {this.props.session}
+                        presId = {this.props.presId}
                     />     
                 );
             case 2:
