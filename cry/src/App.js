@@ -40,9 +40,9 @@ function App() {
         <Route path='/' element={<Home />}></Route>
         <Route path='/UserInfo' element={<UserInfo />}></Route>
         <Route path='/TimeSelection' element={<TimeSelection />}></Route>
-        <Route path='/Session' element={<Session />}></Route>
-        <Route path='/JudgeForm' element={<JudgeForm />}></Route>
-        <Route path='/Presentations' element={<Presentations />}></Route>
+        <Route path='/Session/:time' element={<Session />}></Route>
+        <Route path='/JudgeForm/:email/:presId' element={<JudgeForm />}></Route>
+        <Route path='/Presentations/:time/:session' element={<Presentations />}></Route>
         {/* <Route path='/Grade' element={<Grade />}></Route>
         <Route path='/Content' element={<Content />}></Route>
         <Route path='/Impression' element={<Impression />}></Route>

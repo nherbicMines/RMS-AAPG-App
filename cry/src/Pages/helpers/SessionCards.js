@@ -16,6 +16,7 @@ export default class SessionCards extends Component{
   handleClick(event){
       var id = event.target.id;
       console.log(id);
+      console.log(this.props.time);
   }
 
   //when we start interfacing with DB, get rid of title in id 
@@ -25,18 +26,14 @@ export default class SessionCards extends Component{
   - The id for each button is associated to the presentation's key from DB
   - each button will take the user to the judge form page after clicking */
     makeButton(data) {
-        const email = this.props.email;
         return (
-            <Link to = {"/Presentations"}
-              //send the email and session string to next page
-              state = {{
-                email: email,
-                session: data 
-            }}> 
+          <div>
+            <Link to = {`/Presentations/${this.props.time}/${data}`}>
             <button class="button" id={data} onClick={this.handleClick}>
                 {data}
             </button>
             </Link>
+          </div>
         );
     }
 

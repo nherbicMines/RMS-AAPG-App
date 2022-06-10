@@ -1,22 +1,20 @@
 //This is the presentations page, it simply displays the presenation form class and has a back button
 import PresentationForm from './helpers/PresentationForm';
-import {Link, useLocation } from "react-router-dom";
+import {Link, useParams } from "react-router-dom";
 import Axios from 'axios'
 
 function Presentations() {
-  const location = useLocation();
-  const { email } = location.state;
-  console.log(email);
+  let {time, session} = useParams();
+  console.log(time);
+  console.log(session);
+
   return (
     <div>
       <p class="bigText">
       Presentations
       </p>
       <PresentationForm />
-      <Link to={"/Session"}
-          state={{
-            email: email,
-          }}>
+      <Link to={`/Session/${time}`}>
         <button class="buttonSmallLexi">
           back 
         </button>
