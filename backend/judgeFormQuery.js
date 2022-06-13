@@ -18,7 +18,7 @@ module.exports = function judgeFormQuery(app, connection){
         const comments = req.body.comments;
 
         const request = new Request (
-            `INSERT INTO individual_score (user_email, presentation_number, organization, attractiveness, legibilty, 
+            `INSERT INTO individual_scores (user_email, presentation_number, organization, attractiveness, legibilty, 
             tech_originality, sig_and_longevity, substantiation, overall_impression, paper, lecture_tour, comments) 
             VALUES (@email, @presentationNum, @organization, @attractiveness, @legibility, @originality, @longevity, 
             @substantiation, @impression, @paper, @lectureTour, @comments)`,
