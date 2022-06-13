@@ -1,16 +1,16 @@
 import React, { Component } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 import { TextField } from '@mui/material'
+import { useCookies } from 'react-cookie'
 import Axios from 'axios'
 
 function UserInfo() {
-  let nav = useNavigate();
   return (
     <div>
       <div class="bigText">
         Information!
       </div>
-      <SimpleForm nav = {nav}/>
+      <SimpleForm/>
     </div>
     
   )
@@ -36,7 +36,8 @@ class SimpleForm extends React.Component {
     this.handleChangeLastName = this.handleChangeLastName.bind(this);
     this.handleChangeCompany = this.handleChangeCompany.bind(this);
     this.handleChangeEmail = this.handleChangeEmail.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleSetCookie = this.handleSetCookie.bind(this);
     this.state = {
       firstName: '',
       lastName: '',
@@ -47,6 +48,11 @@ class SimpleForm extends React.Component {
       emailValid: false,         // valid flags for each field
       submitDisabled: true       // separate flag for submit
     }
+  }
+
+  handleSetCookie = () => {
+    const [cookies, setCookie] = useCookies(['email']);
+    setCookie('email', this.state.email, { path: '/' });
   }
 
   handleChangeFirstName(e) {         // separate handler for each field
@@ -90,7 +96,7 @@ class SimpleForm extends React.Component {
   }
 
   handleSubmit(e) {
-    this.nav.navigate("/JudgeForm/:time/:session/:presId", {state:{email:this.state.email}});
+    this.handleSetCookie();
     Axios.post("http://localhost:3001/UserInfo", {
       firstName: this.state.firstName,
       lastName: this.state.lastName,
