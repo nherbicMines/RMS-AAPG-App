@@ -1,15 +1,16 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { TextField } from '@mui/material'
 import Axios from 'axios'
 
-function userInfo() {
+function UserInfo() {
+  let nav = useNavigate();
   return (
     <div>
       <div class="bigText">
         Information!
       </div>
-      <SimpleForm />
+      <SimpleForm nav = {nav}/>
     </div>
     
   )
@@ -21,7 +22,9 @@ function containsSpecialChars(str) {
 }
 
 class SimpleForm extends React.Component {
+  
   constructor(props) {
+    
     super(props);
     // create a ref to store the DOM element
     {/*this.firstName = React.createRef();
@@ -87,13 +90,15 @@ class SimpleForm extends React.Component {
   }
 
   handleSubmit(e) {
+    this.nav.navigate("/JudgeForm/:time/:session/:presId", {state:{email:this.state.email}});
     Axios.post("http://localhost:3001/UserInfo", {
-      firstName: this.state.firstName, 
+      firstName: this.state.firstName,
       lastName: this.state.lastName,
       company: this.state.company, 
       email: this.state.email})
-   }
-  
+  }
+
+   
 
   render() {
     return (
@@ -163,4 +168,4 @@ class SimpleForm extends React.Component {
   }
 }
 
-export default userInfo
+export default UserInfo
