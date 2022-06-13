@@ -5,6 +5,7 @@ import TimeSelection from './Pages/TimeSelection';
 import Presentations from './Pages/Presentations';
 import JudgeForm from './Pages/JudgeForm';
 import Session from './Pages/Session';
+import Admin from './Pages/Admin';
 // import Grade from './Pages/Grade';
 // import Content from './Pages/Content';
 // import Impression from './Pages/Impression';
@@ -30,6 +31,7 @@ function App() {
         <Link to="/Session"> Session |</Link>
         <Link to="/Presentations"> Presentations |</Link>
         <Link to="/JudgeForm"> JudgeForm |</Link>
+        <Link to="/Admin"> Admin |</Link>
         {/* <Link to="/Grade"> Grade |</Link>
         <Link to="/Content"> Content |</Link>
         <Link to="/Impression"> Impression |</Link>
@@ -43,6 +45,7 @@ function App() {
         <Route path='/Session/:time' element={<Session />}></Route>
         <Route path='/JudgeForm/:time/:session/:presId' element={<JudgeForm />}></Route>
         <Route path='/Presentations/:time/:session' element={<Presentations />}></Route>
+        <Route path='/Admin' element={<Admin />}></Route>
         {/* <Route path='/Grade' element={<Grade />}></Route>
         <Route path='/Content' element={<Content />}></Route>
         <Route path='/Impression' element={<Impression />}></Route>
