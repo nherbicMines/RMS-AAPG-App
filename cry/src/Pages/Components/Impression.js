@@ -8,18 +8,18 @@ import React, { Component } from 'react'
 export class Impression extends Component {
   continue = e => {
     e.preventDefault();
-    if((this.props.values.impression != '' && this.props.values.impression != null) &&
-      this.props.values.bulletin != null && this.props.values.selectForTour != null){
+    if((this.props.values.impression !== '' && this.props.values.impression !== null) &&
+      this.props.values.bulletin !== null && this.props.values.selectForTour !== null){
       this.props.nextStep();
     }else{
       let message  = '';
-      if(this.props.values.impression == '' || this.props.values.impression == null){
+      if(this.props.values.impression === '' || this.props.values.impression === null){
         message += "Score Required: Impression\n"
       }
-      if(this.props.values.bulletin == null){
+      if(this.props.values.bulletin === null){
         message += "Input Required: AAPG Bulletin\n"
       }
-      if(this.props.values.selectForTour == null){
+      if(this.props.values.selectForTour === null){
         message += "Input Required: Distinquished Lecture Tour"
       }
       alert(message)

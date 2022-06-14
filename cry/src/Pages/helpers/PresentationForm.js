@@ -18,7 +18,7 @@ export default class PresentationForm extends Component{
   //function that kinda saves info of the button you press
   handleClick(event){
     var id = event.target.id;
-
+    console.log(id);
   }
 
   //when we start interfacing with DB, get rid of title in id 

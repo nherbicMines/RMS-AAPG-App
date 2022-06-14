@@ -1,5 +1,5 @@
 import { TextField } from '@mui/material';
-import React, { Component, useState } from 'react'
+import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 
 //Needs to figure out how to save the inputs and comminucate to the database. (Form?)
@@ -11,21 +11,21 @@ import { Link } from 'react-router-dom'
 export class Grade extends Component {
   continue = e => {
     e.preventDefault();
-    if((this.props.values.organization != null && this.props.values.organization != '') &&
-      (this.props.values.actractiveness != null && this.props.values.actractiveness != '') &&
-      (this.props.values.legibility != null && this.props.values.legibility != '')){
+    if((this.props.values.organization !== null && this.props.values.organization !== '') &&
+      (this.props.values.actractiveness !== null && this.props.values.actractiveness !== '') &&
+      (this.props.values.legibility !== null && this.props.values.legibility !== '')){
         this.props.nextStep();
     }else{
       let message = ''
-      if(this.props.values.organization == '' || this.props.values.organization == null){
+      if(this.props.values.organization === '' || this.props.values.organization === null){
         document.getElementById("organizationField").setAttribute("error", "Score Required");
         //noEntry.setAttribute("helperText", "Score Required")
         message += "Score Required: Orgranization\n";
       }
-      if(this.props.values.actractiveness == '' || this.props.values.actractiveness == null){
+      if(this.props.values.actractiveness === '' || this.props.values.actractiveness === null){
         message += "Score Required: Actractiveness\n"
       }
-      if(this.props.values.legibility == '' || this.props.values.legibility == null){
+      if(this.props.values.legibility === '' || this.props.values.legibility === null){
         message += "Score Required: Legibility"
       }
       alert(message)

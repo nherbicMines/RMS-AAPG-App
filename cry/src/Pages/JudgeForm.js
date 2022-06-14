@@ -1,7 +1,7 @@
 import React from 'react';
 import UserForm from "./Components/UserForm";
 import { useState } from 'react';
-import { Link, useParams} from 'react-router-dom'
+import { useParams} from 'react-router-dom'
 
 /* Form Page
  * Function: Holds the page for a multiple page form. This will be the parent page of the subpages
@@ -9,15 +9,15 @@ import { Link, useParams} from 'react-router-dom'
  * judging form easier.
  */
 function JudgeForm() {
-  const [data, setData] = useState('');
+  const [data] = useState('');
   let { time, session, presId } = useParams();
   console.log(time);
   console.log(session);
   console.log(presId);
 
-  const passToForm = () => {
+  /*const passToForm = () => {
     setData(this.props.location)
-  }
+  }*/
   return (
     <div className = "JudgeForm">
       <div class="bigText">

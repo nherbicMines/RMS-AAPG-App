@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
+import React from 'react'
 import SessionCards from './helpers/SessionCards'
-import {Link, useLocation, useParams } from "react-router-dom";
+import {Link, useParams } from "react-router-dom";
 
 //This is the session page, it simply displays the session cards class and has a back button
 function Session() {

@@ -1,6 +1,6 @@
-import {Link, useParams } from "react-router-dom";
+//import {Link, useParams } from "react-router-dom";
 import React from 'react'
-import Axios from 'axios'
+//import Axios from 'axios'
 
 function Admin() {
   return (

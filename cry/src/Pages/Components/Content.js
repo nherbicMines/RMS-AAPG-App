@@ -8,19 +8,19 @@ import React, { Component } from 'react';
 export class Content extends Component {
   continue = e => {
     e.preventDefault();
-    if((this.props.values.originality != null && this.props.values.originality != '') &&
-      (this.props.values.longevity != null && this.props.values.longevity != '') &&
-      (this.props.values.substantiation != null && this.props.values.substantiation != '')){
+    if((this.props.values.originality !== null && this.props.values.originality !== '') &&
+      (this.props.values.longevity !== null && this.props.values.longevity !== '') &&
+      (this.props.values.substantiation !== null && this.props.values.substantiation !== '')){
         this.props.nextStep();
     }else{
       let message = ''
-      if(this.props.values.originality == '' || this.props.values.originality == null){
+      if(this.props.values.originality === '' || this.props.values.originality === null){
         message += "Score Required: Originality\n";
       }
-      if(this.props.values.longevity == '' || this.props.values.longevity == null){
+      if(this.props.values.longevity === '' || this.props.values.longevity === null){
         message += "Score Required: Longevity\n"
       }
-      if(this.props.values.substantiation == '' || this.props.values.substantiation == null){
+      if(this.props.values.substantiation === '' || this.props.values.substantiation === null){
         message += "Score Required: Substantiation"
       }
       alert(message)

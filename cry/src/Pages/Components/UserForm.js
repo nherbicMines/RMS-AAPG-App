@@ -63,7 +63,7 @@ export class UserForm extends Component {
         if(errorCheck.hasOwnProperty(input)){
             if(e.target.value > errorCheck[input][0] && e.target.value < errorCheck[input][1]){
                 this.setState({ [input]: e.target.value });
-            }else if(e.target.value == ""){
+            }else if(e.target.value === ""){
                 this.setState({ [input]: e.target.value });
             }else{
                 this.setState({ [input]: null });

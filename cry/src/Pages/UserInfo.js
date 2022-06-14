@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import { Link, useNavigate } from 'react-router-dom';
+import React from 'react'
+import { Link } from 'react-router-dom';
 import { TextField } from '@mui/material'
 import { useCookies } from 'react-cookie'
 import Axios from 'axios'
@@ -26,12 +26,7 @@ class SimpleForm extends React.Component {
   constructor(props) {
     
     super(props);
-    // create a ref to store the DOM element
-    {/*this.firstName = React.createRef();
-    this.lastName = React.createRef();
-    this.company = React.createRef();
-    this.email = React.createRef();
-  */}
+
     this.handleChangeFirstName = this.handleChangeFirstName.bind(this);
     this.handleChangeLastName = this.handleChangeLastName.bind(this);
     this.handleChangeCompany = this.handleChangeCompany.bind(this);
@@ -53,6 +48,7 @@ class SimpleForm extends React.Component {
   handleSetCookie = () => {
     const [cookies, setCookie] = useCookies(['email']);
     setCookie('email', this.state.email, { path: '/' });
+    console.log(cookies.email);
   }
 
   handleChangeFirstName(e) {         // separate handler for each field
@@ -81,7 +77,7 @@ class SimpleForm extends React.Component {
   handleChangeEmail(e) {         // separate handler for each field
     let emailValid = e.target.value ? true : false;        // basic email validation
     let containsAt = false;
-    if(containsSpecialChars(e.target.value) == true){
+    if(containsSpecialChars(e.target.value) === true){
       containsAt = true;
     }
     let submitValid = this.state.firstNameValid && this.state.lastNameValid && emailValid && containsAt   // validate total form

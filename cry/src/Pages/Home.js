@@ -6,14 +6,14 @@ function Home() {
   
   return (
     <div>
-      <img src={process.env.PUBLIC_URL + "/nexthorizon.jpg"}/>
+      <img src={process.env.PUBLIC_URL + "/nexthorizon.jpg"} alt="RMS-AAPG Logo"/>
       <div>
         <Link to = "/UserInfo">
           <button class="button">Evaluation Form</button>
         </Link>
       </div>
       <div>
-        <a href={pdf} target = "_blank">
+        <a href={pdf} target = "_blank" rel="noreferrer">
           <button class="button"> Schedule </button>
         </a>
       </div>
