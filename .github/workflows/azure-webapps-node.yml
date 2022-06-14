@@ -44,6 +44,7 @@ jobs:
         cache: 'npm'
 
     - name: npm install, build, and test
+      working-directory: ./cry
       run: |
         npm install
         npm run build --if-present
