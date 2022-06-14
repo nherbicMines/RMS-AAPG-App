@@ -9,6 +9,12 @@ function Admin() {
             Data
         </p>
         <button class="buttonSmallLexi">
+            Load 
+        </button>
+        <button class="buttonSmallLexi">
+            Sort 
+        </button>
+        <button class="buttonSmallLexi">
             Download 
         </button>
     </div>
