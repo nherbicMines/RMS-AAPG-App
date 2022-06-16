@@ -27,13 +27,13 @@ function App() {
     <CookiesProvider>
       <BrowserRouter>
         <nav className="smallText" >
-          <Link to="/"> Home |</Link>
+         {/* <Link to="/"> Home |</Link>
           <Link to="/UserInfo"> User Info |</Link>
           <Link to="/TimeSelection"> Time Selection |</Link>
           <Link to="/Session"> Session |</Link>
           <Link to="/Presentations"> Presentations |</Link>
           <Link to="/JudgeForm"> JudgeForm |</Link>
-          <Link to="/Admin"> Admin |</Link>
+          <Link to="/Admin"> Admin |</Link>*/}
           {/* <Link to="/Grade"> Grade |</Link>
           <Link to="/Content"> Content |</Link>
           <Link to="/Impression"> Impression |</Link>
