@@ -1,6 +1,6 @@
 import React from 'react'
 import {Link } from "react-router-dom";
-import pdf from "../pdf/Academic-Calendar-2022-23.pdf";
+import pdf from "../pdf/RMS2022-Technical-Program.pdf";
 
 function Home() {
   
