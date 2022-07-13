@@ -1,6 +1,10 @@
 import React from 'react'
 import {Link } from "react-router-dom";
+<<<<<<< HEAD
 import pdf from "../pdf/RMS2022-Technical-Program.pdf";
+=======
+import pdf from "../pdf/schedule.pdf";
+>>>>>>> 0ea511df3624518391e77c05f46923cb800213f8
 
 function Home() {
   
